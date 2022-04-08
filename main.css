@@ -28,7 +28,7 @@ main{
     max-height: 120vh;
     border-radius: 10px;
     gap: 0.5rem;
-    background-color: var(--main-color);
+    background-color: #fff;
     -webkit-box-shadow: 6px 8px 12px 0px rgba(0,0,0,0.39); 
     box-shadow: 6px 8px 12px 0px rgba(0,0,0,0.39);
 }
@@ -77,17 +77,25 @@ main{
 }
 
 .title{
-    font-size: 3rem;
-    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
     color: var(--quaternary-color);
 }
 .title_description{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
     font-size: 1.5rem;
     color: var(--quaternary-color);
     margin-bottom: 1rem;
 }
 
+.product_information {
+    width: 100%;
+}
+
 .product_information_price{
+    font-family: 'Montserrat', sans-serif;
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
@@ -95,35 +103,51 @@ main{
 .product_information_price p{
     font-size: 1.3rem;
 }
+
 .product_information_price p:nth-child(1){
-    color: red;
+    font-size: 1rem;
+    font-weight: 600;
+
+}
+
+.product_information_price p:nth-child(2){
+    font-size: 2rem;
+    font-weight: 600;
 
 }
 
 .products_flavors{
     display: flex;
+    justify-content: space-around;
     gap: 1.5rem;
     flex-wrap: nowrap;
     overflow-x: hidden;
     margin-bottom: 1rem;
-    width: max-content;
+    width: 100%;
+    padding: 0.5rem;
 }
 
 .products_flavors img{
+    background-color: #fff;
+    border: solid 1px rgb(248, 248, 248);
     padding: 0.5rem;
     height: 65px;
-    border: 1px solid black;
     border-radius: 5px;
+    -webkit-box-shadow: 2px 2px 9px -5px rgba(0,0,0,0.3);
+    -moz-box-shadow: 2px 2px 9px -5px rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 9px -5px rgba(0,0,0,0.3);
 }
 
-.buy_button{
-   padding: 1rem;
-   width: 6rem;
+.buy_button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    padding: 1rem;
+    width: 6rem;
     background-color: var(--quaternary-color);
     border: none;
-    color: var(--main-color);
+    color: #fff;
     border-radius: 5px;
-    align-self: flex-end;
+    align-self: flex-start;
     justify-self: flex-end;
 }
 
@@ -149,10 +173,10 @@ main{
     }
     .product_information{
         display: flex;
-        flex-direction:column;
+        flex-direction: column;
         height: 90%;
         width: 90%;
-        justify-content: space-around;
+        justify-content: flex-start;
     }
     .products_flavors{
         width: max-content;
@@ -167,5 +191,32 @@ main{
     .product_information_price p{
         font-size: 1.5rem;
         flex-wrap: wrap;
+    }
+
+    .title {
+        font-size: 4rem;
+    }
+
+    .title_description{
+        margin-top: -15px;
+        font-size: 2.7rem;
+    }
+
+    .products_flavors img{
+        margin-top: 20px;
+    }
+
+    .product_information_price p:nth-child(1){
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-top: 3rem;
+    
+    }
+    
+    .product_information_price p:nth-child(2){
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-top: -1.3rem;
+    
     }
 }
