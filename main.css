@@ -19,6 +19,15 @@ body{
 }
 
 main{
+    background-color: #fff;
+    -webkit-box-shadow: 6px 8px 12px 0px rgba(0,0,0,0.39); 
+    box-shadow: 6px 8px 12px 0px rgba(0,0,0,0.39);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+}
+.wrapper{
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -28,9 +37,81 @@ main{
     max-height: 120vh;
     border-radius: 10px;
     gap: 0.5rem;
-    background-color: #fff;
-    -webkit-box-shadow: 6px 8px 12px 0px rgba(0,0,0,0.39); 
-    box-shadow: 6px 8px 12px 0px rgba(0,0,0,0.39);
+}
+
+.progress-bar{
+    display: flex;
+    margin: 20px 0;
+    width: 330px;
+}
+
+.progress-bar .step{
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+.progress-bar .step p{
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--quaternary-color);
+    margin-bottom: 8px;
+}
+.progress-bar .step .bullet{
+    position: relative;
+    height: 25px;
+    width: 25px;
+    border: 2px solid var(--quaternary-color);
+    display: inline-block;
+    border-radius: 50%;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 25px;
+}
+
+.progress-bar .step:last-child .bullet::before,
+.progress-bar .step:last-child   .bullet::after{
+    display: none;
+}
+
+.progress-bar .step .bullet::before,
+.progress-bar .step .bullet::after{
+    position: absolute;
+    content: '';
+    bottom: 11px;
+    right: -57px;
+    height: 3px;
+    width: 53px;
+    background: #262626;
+}
+
+.progress-bar .step .bullet::after{
+    background: #d43f8d;
+    transform: scaleX(0 );
+    transform-origin: left ;
+    animation: animate 0.3s linear forwards;
+}
+
+@keyframes animate {
+    100%{
+        transform: scaleX(1);
+    }
+}
+
+.progress-bar .step span{
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 25px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.progress-bar .step .check{
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    font-size: 15px;
+    transform: translate(-50%, -50%);
+    display: none;
 }
 
 .main_product_left, .main_product_right{
@@ -51,7 +132,6 @@ main{
     justify-content: space-around;
     align-items: center;
     gap: 0.5rem;
-    background-color: var(--secondary-color);
     width: 100%;
     flex: 1;
 }
@@ -153,6 +233,9 @@ main{
 
 @media screen and (min-width: 600px) {
     main{
+        flex-direction: column;
+    }
+    .wrapper{
         flex-direction: row;
     }
     .main_product_left{
@@ -219,4 +302,5 @@ main{
         margin-top: -1.3rem;
     
     }
+    
 }
