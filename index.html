@@ -51,7 +51,7 @@
         </div>
 
         <div class="wrapper">
-            <section class="main_product_left">
+            <section class="main_product_left hidden">
                 <div class="main_product_left_products">
                     <img src="./assests/images/info01.webp" alt="" />
                     <img src="./assests/images/info02.jpg" alt="" />
@@ -61,7 +61,7 @@
                 <div class="main_product_left_product"></div>
             </section>
             <section class="main_product_right">
-                <div class="product_information">
+                <div class="product_information hidden">
                     <h1 class="title">Ramune</h1>
                     <p class="title_description">Pineapple Flavor</p>
                     <div class="products_flavors">
@@ -151,37 +151,48 @@
                         <button class="btn-next" type="button">NEXT</button>
                     </form>
                 </section>
-                <div class="shipping hidden">
-                    <form action="">
-                        <h2>Shipping</h2>
-                        <p><b>shipping type</b></p>
-                        <div>
+                <section class="shipping-form">
+                    <h2>Shipping</h2>
+                    <p></p>
+                    <form>
+                        <article class="shipping-free">
+                            <input type="radio" id="free" name="shipment" />
                             <label for="free">Free shipment (72h)</label>
-                            <input type="radio" id="free" name="shipping" value="free" checked>
-                        </div>
-                        <div>
-                            <label for="extra">Extra shipment (48h)</label>
-                            <input type="radio" id="extra" name="shipping" value="extra" checked>
-                        </div>
-                        <div>
-                            <label for="express">Express shipment (24h)</label>
-                            <input type="radio" id="express" name="shipping" value="express" checked>
-                        </div>
-
-                        <p>
-                            <b>Your order will arrive:</b><br />
-                            <span class="capital-text">ESTIMATE DELIVERY DATE</span><br />
-                            Between <b>July 14th 2022 13:00h</b> and
-                            <b>July 16th 2022 16:30h</b>
-                        </p>
-                        <input type="checkbox" name="gift" id="gift" />
-                        <label for="html">is it a gift?</label><br />
-                        <textarea name="gift-message" id="gift-message" cols="30"
-                            rows="10">Gift message here...</textarea><br />
-                        <label for="image">Select image</label><br />
-                        <input name="image" id="image" type="file" />
+                        </article>
+            
+                        <article class="shipping-free">
+                            <input type="radio" id="uname" name="shipment" />
+                            <label for="extra">Extra shipment (48h) <b> 3,99€</b></label>
+                        </article>
+            
+                        <article class="shipping-free">
+                            <input type="radio" id="uname" name="shipment" />
+                            <label for="username">Express shipment (24h) <b>7,99€</b></label>
+                        </article>
+            
+                        <p class="shipping-paraf"><b>Your order will arrive:</b></p>
+            
+                        <p class="small-cap shipping-paraf">ESTIMATE DELIVERY DATE:</p>
+            
+                        <p class="shipping-paraf">Between <b>July 21th 2022 14:00h.</b> and <b>July 21th 2022 20:00h.</b></p>
+                        
+                        <article class="shipping-free gift-check">
+                            <input type="checkbox" id="gift-check" />
+                            <label for="gift-check">Is it a <b>gift?</b></label>
+                        </article>
+                        
+                        <textarea class="gift-message" name="gift-message" id="gift-message" cols="40" rows="10">Gift message here...</textarea><br>
+            
+                        <article class="select-image">
+                            <label for="image">Select Image</label>
+                            <input name="image" id="image" type="file" />
+                        </article>
+            
+                        <button class="btn-reset" type="reset">Clear form</button>
+                        <button class="btn-next" type="button">NEXT</button>
+            
                     </form>
-                </div>
+                </section>
 
                 <div class="finish hidden">
                     <section>
