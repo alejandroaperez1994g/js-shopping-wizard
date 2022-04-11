@@ -7,13 +7,13 @@
     font-family: 'Montserrat', sans-serif;
 }
 :root{
-    --main-color: #F7E2E2;
-    --secondary-color: #61A4BC;
-    --tertiary-color: #5B7DB1;
-    --quaternary-color: #1A132F;
+    --main-color: #98DDCA;
+    --secondary-color: #D5ECC2;
+    --tertiary-color: #FFD3B4;
+    --quaternary-color: #FFAAA7;
 }
 body{
-    background-image: linear-gradient(-225deg, #F7E2E2 0%, #61A4BC 100%);
+    background-image: linear-gradient(-225deg, #98DDCA 0%, #D5ECC2 100%);
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -56,7 +56,7 @@ main{
 .progress-bar .step p{
     font-size: 18px;
     font-weight: 500;
-    color: var(--quaternary-color);
+    color: #000;
     margin-bottom: 8px;
 }
 .progress-bar .step .bullet{
@@ -162,12 +162,12 @@ main{
 .title{
     font-size: 2rem;
     font-weight: 700;
-    color: var(--quaternary-color);
+    color: #000;
 }
 .title_description{
     font-weight: 300;
     font-size: 1.5rem;
-    color: var(--quaternary-color);
+    color: #000;
     margin-bottom: 1rem;
 }
 
@@ -220,8 +220,9 @@ main{
 
 .buy_button {
     font-weight: 600;
+    font-size: 1rem;
     padding: 1rem;
-    width: 6rem;
+    width: 10rem;
     background-color: var(--quaternary-color);
     border: none;
     color: #fff;
@@ -277,12 +278,12 @@ main{
     }
 
     .title {
-        font-size: 4rem;
+        font-size: 4.5rem;
     }
 
     .title_description{
         margin-top: -15px;
-        font-size: 2.7rem;
+        font-size: 3rem;
     }
 
     .products_flavors img{
@@ -290,15 +291,21 @@ main{
     }
 
     .product_information_price p:nth-child(1){
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         font-weight: 600;
         margin-top: 3rem;
     
     }
     
     .product_information_price p:nth-child(2){
-        font-size: 2.8rem;
+        font-size: 3.5rem;
         font-weight: 700;
+        margin-top: -2rem;
+    
+    }
+    .product_information_price p:nth-child(3){
+        font-size: 2.2rem;
+        font-weight: 200;
         margin-top: -1.3rem;
     
     }
