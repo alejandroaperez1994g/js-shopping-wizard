@@ -1,73 +1,72 @@
-#capital {
-    font-weight: 600;
-    font-size: 0.7rem;
-}
-
-/* #address, .profile, .finish {
-    display: none;
-} */
-
-.shipping, .address {
+.profile-form, .address-form {
     display: flex;
     flex-direction: column;
 }
 
-.btn_left {
+.input_text {
+    margin-bottom: 0.4rem;
+}
+
+input, select {
+    background: none;
+    font-size: 1rem;
+    padding: 10px 10px 10px 5px;
+    margin-bottom: 0.3rem;
+    display: block;
+    width: 16rem;
+    border: none;
+    border-bottom: 1px solid #c9c9c9;
+}
+
+input:focus {
+    outline: none;
+    color: #5e5d5d;
+}
+
+label {
+    color: #919191;
+    transition: 0.5s ease-in-out all;
+    pointer-events: none;
+}
+
+input:focus~label {
+    font-size: 1.08rem;
+    color: #98DDCA;
+}
+
+button {
+    margin-top: 3rem;
+}
+
+.btn-reset {
     height: 2rem;
     background-color: #FFD3B4;
     color: #fff;
     border: none;
     border-radius: 4px;
-    width: 6rem;
+    width: 10rem;
     font-weight: 500;
 }
 
-.btn_right {
+.btn-next {
     height: 2rem;
     background-color: #FFAAA7;
     color: #fff;
     border: none;
     border-radius: 4px;
-    width: 6rem;
+    width: 6.7rem;
     font-weight: 700;
 }
 
-/* label{
-    grid-column: 1 / 2;
-}
-input, button{
-    grid-column: 2 / 3;
-}
-input, button, select{
-    border-radius: 5px;
-}
-form {
-    display: grid;
-    grid-template-columns: 2fr;
-    grid-gap: 1rem;
-}
-input[type=submit]{
-    height: 2rem;
-    background-color: #FFAAA7;
-    color: #fff;
-    border: none;
-    grid-column: 2 / 3;
-    border-radius: 4px;
-}
-input[type=reset]{
-    height: 2rem;
-    background-color: #FFD3B4;
-    color: #fff;
-    border: none;
-    grid-column: 1 / 2;
-    border-radius: 4px;
-}
-.hidden{
-    padding: 2rem 0;
-    margin: 2rem 0;
-    border-radius: 10px; 
+.prefix {
+    display: flex;
+    width: 5rem;
 }
 
-.hidden input{
-    padding: 3px 4px;
-} */
+.phone {
+    width: 8.3rem;
+}
+
+.hidden {
+    display: none;
+}
