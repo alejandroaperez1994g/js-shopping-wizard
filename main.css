@@ -231,7 +231,7 @@ main{
     justify-self: flex-end;
 }
 
-
+/************ FORMULARIO **************/
 label{
     grid-column: 1 / 2;
 }
@@ -240,8 +240,8 @@ input, button{
 }
 form {
     display: grid;
-    grid-template-columns: 200px 1fr;
-    grid-gap: 16px;
+    grid-template-columns: 6rem 1fr;
+    grid-gap: 10px;
 }
 
 
