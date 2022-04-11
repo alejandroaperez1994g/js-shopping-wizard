@@ -88,8 +88,11 @@
                     </div>
                     <button class="buy_button">BUY</button>
                 </div>
+                <div class="profile">
+
+                </div>
                 <div class="product_form hidden">
-                    <div id="profile">
+                    <div id="address">
                         <form action="">
                             <h2>ADDRESS</h2>
                             <label for="fname">First name:</label>
@@ -125,6 +128,26 @@
                             <input type="submit" value="SEND">
                         </form>
                     </div>
+                </div>
+                <div class="shipping">
+                    <h2>Shipping</h2>
+                    <p><b>shipping type</b></p>
+                    <div>
+                        <input value="1" type="radio" name="shipping" id="free"><label for="html">Free shipment (72h)</label>
+                        <input value="1" type="radio" name="shipping" id="extra"><label for="html">Extra shipping (48h)
+                            <b>+3,99€</b></label>
+                        <input value="1" type="radio" name="shipping" id="express"><label for="html">Express (24h) <b>+6,99€</b></label>
+                    </div>
+                    <p>
+                        <b>Your order will arrive:</b><br />
+                        <span class="capital-text">ESTIMATE DELIVERY DATE</span><br />
+                        Between <b>July 14th 2022 13:00h</b> and <b>July 16th 2022 16:30h</b>
+                    </p>
+                    <input type="checkbox" name="gift" id="gift">
+                    <label for="html">is it a gift?</label><br />
+                    <textarea name="gift-message" id="gift-message" cols="30" rows="10">Gift message here...</textarea><br />
+                    <label for="image">Select image</label><br />
+                    <input name="image" id="image" type="file">
                 </div>
 
             </section>
