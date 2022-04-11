@@ -244,6 +244,11 @@ form {
     grid-gap: 10px;
 }
 
+/*
+.hidden{
+    
+}
+*/
 
 @media screen and (min-width: 600px) {
     main{
