@@ -1,263 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/bace39851e.js"
-      crossorigin="anonymous"
-    ></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/bace39851e.js" crossorigin="anonymous"></script>
     <script src="./script.js" defer></script>
     <title>Shopping</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <header></header>
 
     <main>
-      <div class="progress-bar">
-        <div class="step">
-          <p>Profile</p>
-          <div class="bullet">
-            <span>1</span>
-          </div>
-          <div class="check fas fa-check"></div>
-        </div>
-        <div class="step">
-          <p>Address</p>
-          <div class="bullet">
-            <span>2</span>
-          </div>
-          <div class="check fas fa-check"></div>
-        </div>
-        <div class="step">
-          <p>Shipping</p>
-          <div class="bullet">
-            <span>3</span>
-          </div>
-          <div class="check fas fa-check"></div>
-        </div>
-        <div class="step">
-          <p>Finish</p>
-          <div class="bullet">
-            <span>4</span>
-          </div>
-          <div class="check fas fa-check"></div>
-        </div>
-      </div>
-
-      <div class="wrapper">
-        <section class="main_product_left">
-          <div class="main_product_left_products">
-            <img src="./assests/images/info01.webp" alt="" />
-            <img src="./assests/images/info02.jpg" alt="" />
-            <img src="./assests/images/info03.jpg" alt="" />
-            <img src="./assests/images/info04.png" alt="" />
-          </div>
-          <div class="main_product_left_product"></div>
-        </section>
-        <section class="main_product_right">
-          <div class="product_information">
-            <h1 class="title">Ramune</h1>
-            <p class="title_description">Pineapple Flavor</p>
-            <div class="products_flavors">
-              <img src="./assests/images/product01.png" alt="" />
-              <img src="./assests/images/product02.png" alt="" />
-              <img src="./assests/images/product03.png" alt="" />
-              <img src="./assests/images/product04.png" alt="" />
-            </div>
-            <div class="product_information_price">
-              <p class="price">Price</p>
-              <p class="price">10.00 €</p>
-              <p class="price_description">200 ml</p>
-            </div>
-            <button class="buy_button">BUY</button>
-          </div>
-          <div class="profile">
-            <div class="pro">
-              <h1>Profile</h1>
-            </div>
-
-            <section class="pro_form">
-              <form action="">
-                <label for="username">Username</label><br />
-                <input
-                  class="input_txt"
-                  type="text"
-                  id="uname"
-                  placeholder="Username"
-                  required
-                /><br />
-                <label for="username">Email</label><br />
-                <input
-                  class="input_txt"
-                  type="email"
-                  id="email"
-                  placeholder="Your E-mail"
-                /><br />
-                <label for="username">Password</label><br />
-                <input
-                  class="input_txt"
-                  type="password"
-                  id="password"
-                  placeholder="Password"
-                /><br />
-                <label for="username">Confirm Password</label><br />
-                <input
-                  class="input_txt"
-                  type="password"
-                  id="uname"
-                  placeholder="Repeat Password"
-                /><br />
-              </form>
-            </section>
-            <div class="pro_btn">
-              <button class="btn_left">Clear form</button>
-              <button class="btn_right">Next</button>
-            </div>
-          </div>
-          <div class="product_form hidden">
-            <div id="address">
-              <form action="">
-                <h2>ADDRESS</h2>
-                <label for="fname">First name:</label>
-                <input
-                  type="text"
-                  name="fname"
-                  id="fname"
-                  placeholder="first name"
-                />
-                <label for="lname">Last name:</label>
-                <input
-                  type="text"
-                  name="lname"
-                  id="lname"
-                  placeholder="last name"
-                />
-                <label for="dob">Birthday:</label>
-                <input
-                  type="text"
-                  name="dob"
-                  id="dob"
-                  placeholder="dd/mm/yyyy"
-                />
-                <label for="address1">Address 1:</label>
-                <input
-                  type="text"
-                  name="address1"
-                  id="address1"
-                  placeholder="Street and house number"
-                />
-                <label for="address2">Address 2:</label>
-                <input
-                  type="text"
-                  name="address2"
-                  id="address2"
-                  placeholder="Apartment, suite, etc (optional)"
-                />
-                <label for="posCode">Postal Code:</label>
-                <input
-                  type="text"
-                  name="posCode"
-                  id="posCode"
-                  placeholder="Postal code"
-                />
-                <label for="country">Country:</label>
-                <select id="country" name="country">
-                  <option disabled>Please select...</option>
-                  <option value="andorra">Andorra</option>
-                  <option value="spain">Spain</option>
-                  <option value="france">France</option>
-                  <option value="germany">Germany</option>
-                  <option value="greece">Greece</option>
-                </select>
-                <select id="country" name="country">
-                  <option value="376">376 - AND</option>
-                  <option value="34">34 - ESP</option>
-                  <option value="33">33 - FRA</option>
-                  <option value="49">49 - DEU</option>
-                  <option value="30">30 - GRC</option>
-                </select>
-                <input
-                  type="text"
-                  name="ph"
-                  id="ph"
-                  placeholder="phone number"
-                />
-                <input type="reset" value="CLEAR FORM" />
-                <input type="submit" value="SEND" />
-              </form>
-            </div>
-          </div>
-          <div class="shipping">
-            <h2>Shipping</h2>
-            <p><b>shipping type</b></p>
-            <div>
-              <input value="1" type="radio" name="shipping" id="free" /><label
-                for="html"
-                >Free shipment (72h)</label
-              >
-              <input value="1" type="radio" name="shipping" id="extra" /><label
-                for="html"
-                >Extra shipping (48h) <b>+3,99€</b></label
-              >
-              <input
-                value="1"
-                type="radio"
-                name="shipping"
-                id="express"
-              /><label for="html">Express (24h) <b>+6,99€</b></label>
-            </div>
-            <p>
-              <b>Your order will arrive:</b><br />
-              <span class="capital-text">ESTIMATE DELIVERY DATE</span><br />
-              Between <b>July 14th 2022 13:00h</b> and
-              <b>July 16th 2022 16:30h</b>
-            </p>
-            <input type="checkbox" name="gift" id="gift" />
-            <label for="html">is it a gift?</label><br />
-            <textarea name="gift-message" id="gift-message" cols="30" rows="10">
-Gift message
-                        here...</textarea
-            ><br />
-            <label for="image">Select image</label><br />
-            <input name="image" id="image" type="file" />
-          </div>
-          <div class="finish">
-            <section>
-              <article>
-                <img src="" alt="" style="height: 60px" />
-                <div>
-                  <h2>Titulo del producto</h2>
-                  <p>Price: precio del producto</p>
-                  <p>Estimate delivery date:</p>
-                  <p>Timepo estimado de llegado</p>
+        <div class="progress-bar">
+            <div class="step">
+                <p>Profile</p>
+                <div class="bullet">
+                    <span>1</span>
                 </div>
-              </article>
-              <input type="checkbox" id="terms" />
-              <label for="terms">I have read the terms and conditions</label>
-              <p>Error Message</p>
-              <button>Buy Now</button>
+                <div class="check fas fa-check"></div>
+            </div>
+            <div class="step">
+                <p>Address</p>
+                <div class="bullet">
+                    <span>2</span>
+                </div>
+                <div class="check fas fa-check"></div>
+            </div>
+            <div class="step">
+                <p>Shipping</p>
+                <div class="bullet">
+                    <span>3</span>
+                </div>
+                <div class="check fas fa-check"></div>
+            </div>
+            <div class="step">
+                <p>Finish</p>
+                <div class="bullet">
+                    <span>4</span>
+                </div>
+                <div class="check fas fa-check"></div>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <section class="main_product_left">
+                <div class="main_product_left_products">
+                    <img src="./assests/images/info01.webp" alt="" />
+                    <img src="./assests/images/info02.jpg" alt="" />
+                    <img src="./assests/images/info03.jpg" alt="" />
+                    <img src="./assests/images/info04.png" alt="" />
+                </div>
+                <div class="main_product_left_product"></div>
             </section>
-            <section>
-              <p>Your Order:</p>
-              <hr />
-              <p>producto: precio producto</p>
-              <p>tipo de envio: precio del envio</p>
-              <hr />
-              <p>total: producto + tipo de envio</p>
+            <section class="main_product_right">
+                <div class="product_information">
+                    <h1 class="title">Ramune</h1>
+                    <p class="title_description">Pineapple Flavor</p>
+                    <div class="products_flavors">
+                        <img src="./assests/images/product01.png" alt="" />
+                        <img src="./assests/images/product02.png" alt="" />
+                        <img src="./assests/images/product03.png" alt="" />
+                        <img src="./assests/images/product04.png" alt="" />
+                    </div>
+                    <div class="product_information_price">
+                        <p class="price">Price</p>
+                        <p class="price">10.00 €</p>
+                        <p class="price_description">200 ml</p>
+                    </div>
+                    <button class="buy_button">BUY</button>
+                </div>
+                <div class="profile">
+                    <div class="pro">
+                        <h1>Profile</h1>
+                    </div>
+
+                    <section class="pro_form">
+                        <form action="">
+                            <article class="input_txt">
+                                <label for="username">Username</label>
+                                <input type="text" id="uname" placeholder="Username" required />
+                            </article>
+                            <article class="input_txt">
+                                <label for="username">Email</label><br />
+                                <input type="email" id="email" placeholder="Your E-mail" />
+                            </article>
+                            <article class="input_txt">
+                                <label for="username">Password</label>
+                                <input type="password" id="password" placeholder="Password" />
+                            </article>
+                            <article class="input_txt">
+                                <label for="username">Confirm Password</label>
+                                <input type="password" id="uname" placeholder="Repeat Password" />
+                            </article>
+                        </form>
+                    </section>
+                    <div class="pro_btn">
+                        <button class="btn_left">Clear form</button>
+                        <button class="btn_right">NEXT</button>
+                    </div>
+                </div>
+                <div class="product_form hidden">
+                    <div class="address" id="address">
+                        <form action="">
+                            <h2>ADDRESS</h2>
+                            <div>
+                                <label for="fname">First name:</label>
+                                <input type="text" name="fname" id="fname" placeholder="first name" />
+                            </div>
+                            <div>
+                                <label for="lname">Last name:</label>
+                                <input type="text" name="lname" id="lname" placeholder="last name" />
+                            </div>
+                            <div>
+                                <label for="dob">Birthday:</label>
+                                <input type="text" name="dob" id="dob" placeholder="dd/mm/yyyy" />
+                            </div>
+                            <div>
+                                <label for="address1">Address 1:</label>
+                                <input type="text" name="address1" id="address1"
+                                    placeholder="Street and house number" />
+                            </div>
+                            <div>
+                                <label for="address2">Address 2:</label>
+                                <input type="text" name="address2" id="address2"
+                                    placeholder="Apartment, suite, etc (optional)" />
+                            </div>
+                            <div>
+                                <label for="posCode">Postal Code:</label>
+                                <input type="text" name="posCode" id="posCode" placeholder="Postal code" />
+                            </div>
+                            <div>
+                                <label for="posCode">Postal Code:</label>
+                                <input type="text" name="posCode" id="posCode" placeholder="Postal code" />
+                            </div>
+                            <div>
+                                <label for="country">Country:</label>
+                                <select id="country" name="country">
+                                    <option disabled>Please select...</option>
+                                    <option value="andorra">Andorra</option>
+                                    <option value="spain">Spain</option>
+                                    <option value="france">France</option>
+                                    <option value="germany">Germany</option>
+                                    <option value="greece">Greece</option>
+                                </select>
+                            </div>
+                            <div>
+                                <select id="country" name="country">
+                                    <option value="376">376 - AND</option>
+                                    <option value="34">34 - ESP</option>
+                                    <option value="33">33 - FRA</option>
+                                    <option value="49">49 - DEU</option>
+                                    <option value="30">30 - GRC</option>
+                                </select>
+                                <input type="text" name="ph" id="ph" placeholder="phone number" />
+                            </div>
+                            <button class="btn_left">Clear form</button>
+                            <button class="btn_right">SEND</button>
+                        </form>
+                    </div>
+                    <div class="shipping">
+                        <form action="">
+                            <h2>Shipping</h2>
+                            <p><b>shipping type</b></p>
+                            <div>
+                                <label for="free">Free shipment (72h)</label>
+                                <input type="radio" id="free" name="shipping" value="free" checked>
+                            </div>
+                            <div>
+                                <label for="extra">Extra shipment (48h)</label>
+                                <input type="radio" id="extra" name="shipping" value="extra" checked>
+                            </div>
+                            <div>
+                                <label for="express">Express shipment (24h)</label>
+                                <input type="radio" id="express" name="shipping" value="express" checked>
+                            </div>
+
+                            <p>
+                                <b>Your order will arrive:</b><br />
+                                <span class="capital-text">ESTIMATE DELIVERY DATE</span><br />
+                                Between <b>July 14th 2022 13:00h</b> and
+                                <b>July 16th 2022 16:30h</b>
+                            </p>
+                            <input type="checkbox" name="gift" id="gift" />
+                            <label for="html">is it a gift?</label><br />
+                            <textarea name="gift-message" id="gift-message" cols="30"
+                                rows="10">Gift message here...</textarea><br />
+                            <label for="image">Select image</label><br />
+                            <input name="image" id="image" type="file" />
+                        </form>
+                    </div>
+                </div>
+
+                <div class="finish">
+                    <section>
+                        <article>
+                            <img src="" alt="" style="height: 60px" />
+                            <div>
+                                <h2>Titulo del producto</h2>
+                                <p>Price: precio del producto</p>
+                                <p>Estimate delivery date:</p>
+                                <p>Timepo estimado de llegado</p>
+                            </div>
+                        </article>
+                        <input type="checkbox" id="terms" />
+                        <label for="terms">I have read the terms and conditions</label>
+                        <p>Error Message</p>
+                        <button class="btn_right">Buy Now</button>
+                    </section>
+                    <section>
+                        <p>Your Order:</p>
+                        <hr />
+                        <p>producto: precio producto</p>
+                        <p>tipo de envio: precio del envio</p>
+                        <hr />
+                        <p>total: producto + tipo de envio</p>
+                    </section>
+                </div>
             </section>
-          </div>
-        </section>
-      </div>
+        </div>
     </main>
-  </body>
+</body>
+
 </html>

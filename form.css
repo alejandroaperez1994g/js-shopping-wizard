@@ -1,0 +1,73 @@
+#capital {
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+/* #address, .profile, .finish {
+    display: none;
+} */
+
+.shipping, .address {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn_left {
+    height: 2rem;
+    background-color: #FFD3B4;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    width: 6rem;
+    font-weight: 500;
+}
+
+.btn_right {
+    height: 2rem;
+    background-color: #FFAAA7;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    width: 6rem;
+    font-weight: 700;
+}
+
+/* label{
+    grid-column: 1 / 2;
+}
+input, button{
+    grid-column: 2 / 3;
+}
+input, button, select{
+    border-radius: 5px;
+}
+form {
+    display: grid;
+    grid-template-columns: 2fr;
+    grid-gap: 1rem;
+}
+input[type=submit]{
+    height: 2rem;
+    background-color: #FFAAA7;
+    color: #fff;
+    border: none;
+    grid-column: 2 / 3;
+    border-radius: 4px;
+}
+input[type=reset]{
+    height: 2rem;
+    background-color: #FFD3B4;
+    color: #fff;
+    border: none;
+    grid-column: 1 / 2;
+    border-radius: 4px;
+}
+.hidden{
+    padding: 2rem 0;
+    margin: 2rem 0;
+    border-radius: 10px; 
+}
+
+.hidden input{
+    padding: 3px 4px;
+} */
