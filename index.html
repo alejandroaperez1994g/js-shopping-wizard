@@ -90,8 +90,8 @@
                 </div>
                 <div class="profile">
 
-                        <!-- formulario profile Oualid -->
-                        
+                    <!-- formulario profile Oualid -->
+
                 </div>
                 <div class="product_form hidden">
                     <div id="address">
@@ -106,7 +106,8 @@
                             <label for="address1">Address 1:</label>
                             <input type="text" name="address1" id="address1" placeholder="Street and house number">
                             <label for="address2">Address 2:</label>
-                            <input type="text" name="address2" id="address2" placeholder="Apartment, suite, etc (optional)">
+                            <input type="text" name="address2" id="address2"
+                                placeholder="Apartment, suite, etc (optional)">
                             <label for="posCode">Postal Code:</label>
                             <input type="text" name="posCode" id="posCode" placeholder="Postal code">
                             <label for="country">Country:</label>
@@ -135,10 +136,12 @@
                     <h2>Shipping</h2>
                     <p><b>shipping type</b></p>
                     <div>
-                        <input value="1" type="radio" name="shipping" id="free"><label for="html">Free shipment (72h)</label>
+                        <input value="1" type="radio" name="shipping" id="free"><label for="html">Free shipment
+                            (72h)</label>
                         <input value="1" type="radio" name="shipping" id="extra"><label for="html">Extra shipping (48h)
                             <b>+3,99€</b></label>
-                        <input value="1" type="radio" name="shipping" id="express"><label for="html">Express (24h) <b>+6,99€</b></label>
+                        <input value="1" type="radio" name="shipping" id="express"><label for="html">Express (24h)
+                            <b>+6,99€</b></label>
                     </div>
                     <p>
                         <b>Your order will arrive:</b><br />
@@ -147,9 +150,35 @@
                     </p>
                     <input type="checkbox" name="gift" id="gift">
                     <label for="html">is it a gift?</label><br />
-                    <textarea name="gift-message" id="gift-message" cols="30" rows="10">Gift message here...</textarea><br />
+                    <textarea name="gift-message" id="gift-message" cols="30" rows="10">Gift message
+                        here...</textarea><br />
                     <label for="image">Select image</label><br />
                     <input name="image" id="image" type="file">
+                </div>
+                <div class="finish">
+                    <section>
+                        <article>
+                            <img src='' alt='' style='height: 60px'>
+                            <div>
+                                <h2>Titulo del producto</h2>
+                                <p>Price: precio del producto</p>
+                                <p>Estimate delivery date:</p>
+                                <p>Timepo estimado de llegado</p>
+                            </div>
+                        </article>
+                        <input type="checkbox" id='terms'>
+                        <label for='terms'>I have read the terms and conditions</label>
+                        <p>Error Message</p>
+                        <button>Buy Now</button>
+                    </section>
+                    <section>
+                        <p>Your Order:</p>
+                        <hr>
+                        <p>producto: precio producto</p>
+                        <p>tipo de envio: precio del envio</p>
+                        <hr>
+                        <p>total: producto + tipo de envio</p>
+                    </section>
                 </div>
 
             </section>
