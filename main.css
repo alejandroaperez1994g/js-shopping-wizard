@@ -231,6 +231,20 @@ main{
     justify-self: flex-end;
 }
 
+
+label{
+    grid-column: 1 / 2;
+}
+input, button{
+    grid-column: 2 / 3;
+}
+form {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-gap: 16px;
+}
+
+
 @media screen and (min-width: 600px) {
     main{
         flex-direction: column;
