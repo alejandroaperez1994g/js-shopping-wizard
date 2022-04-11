@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 :root{
     --main-color: #F7E2E2;
@@ -157,13 +158,11 @@ main{
 }
 
 .title{
-    font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
     font-weight: 700;
     color: var(--quaternary-color);
 }
 .title_description{
-    font-family: 'Montserrat', sans-serif;
     font-weight: 300;
     font-size: 1.5rem;
     color: var(--quaternary-color);
@@ -175,7 +174,6 @@ main{
 }
 
 .product_information_price{
-    font-family: 'Montserrat', sans-serif;
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
@@ -219,7 +217,6 @@ main{
 }
 
 .buy_button {
-    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     padding: 1rem;
     width: 6rem;
@@ -238,17 +235,33 @@ label{
 input, button{
     grid-column: 2 / 3;
 }
+input, button, select{
+    border-radius: 5px;
+}
 form {
     display: grid;
     grid-template-columns: 6rem 1fr;
-    grid-gap: 10px;
+    grid-gap: 1rem;
+}
+input[type=submit]{
+    grid-column: 2 / 3;
+    border-radius: 8px;
+}
+input[type=reset]{
+    grid-column: 1 / 2;
+    border-radius: 8px;
+}
+.hidden{
+    padding: 2rem 0;
+    margin: 2rem 0;
+    border-radius: 10px; 
+    /*background-color: #8668e0;
+     box-shadow: 5px 5px 0px 1px #000000; */
 }
 
-/*
-.hidden{
-    
+.hidden input{
+    padding: 3px 4px;
 }
-*/
 
 @media screen and (min-width: 600px) {
     main{
