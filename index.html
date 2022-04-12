@@ -151,7 +151,7 @@
                         <button class="btn-next" type="button">NEXT</button>
                     </form>
                 </section>
-                <section class="shipping-form">
+                <section class="shipping-form hidden">
                     <h2>Shipping</h2>
                     <p></p>
                     <form>
@@ -159,66 +159,80 @@
                             <input type="radio" id="free" name="shipment" />
                             <label for="free">Free shipment (72h)</label>
                         </article>
-            
+
                         <article class="shipping-free">
                             <input type="radio" id="uname" name="shipment" />
                             <label for="extra">Extra shipment (48h) <b> 3,99€</b></label>
                         </article>
-            
+
                         <article class="shipping-free">
                             <input type="radio" id="uname" name="shipment" />
                             <label for="username">Express shipment (24h) <b>7,99€</b></label>
                         </article>
-            
+
                         <p class="shipping-paraf"><b>Your order will arrive:</b></p>
-            
+
                         <p class="small-cap shipping-paraf">ESTIMATE DELIVERY DATE:</p>
-            
-                        <p class="shipping-paraf">Between <b>July 21th 2022 14:00h.</b> and <b>July 21th 2022 20:00h.</b></p>
-                        
+
+                        <p class="shipping-paraf">Between <b>July 21th 2022 14:00h.</b> and <b>July 21th 2022
+                                20:00h.</b></p>
+
                         <article class="shipping-free gift-check">
                             <input type="checkbox" id="gift-check" />
                             <label for="gift-check">Is it a <b>gift?</b></label>
                         </article>
-                        
-                        <textarea class="gift-message" name="gift-message" id="gift-message" cols="40" rows="10">Gift message here...</textarea><br>
-            
+
+                        <textarea class="gift-message" name="gift-message" id="gift-message" cols="40" rows="10">Gift
+                            message here...</textarea><br>
+
                         <article class="select-image">
                             <label for="image">Select Image</label>
                             <input name="image" id="image" type="file" />
                         </article>
-            
+
                         <button class="btn-reset" type="reset">Clear form</button>
                         <button class="btn-next" type="button">NEXT</button>
-            
+
                     </form>
                 </section>
 
-                <div class="finish hidden">
-                    <section>
-                        <article>
+                <section class="finish ">
+                    <articule class="complete_order hidden">
+                        <p class="complete_order_title">Your order is complete! 🥳</p>
+                        <p class="complete_order_info">Thanks you for you order!</p>
+                    </articule>
+                    <articule class="order_information">
+                        <h2>Your Purchase</h2>
+                        <div>
                             <img src="" alt="" style="height: 60px" />
                             <div>
-                                <h2>Titulo del producto</h2>
-                                <p>Price: precio del producto</p>
-                                <p>Estimate delivery date:</p>
-                                <p>Timepo estimado de llegado</p>
+                                <p>Name of the product</p>
+                                <p>Price: price of the product</p>
+                                <p class="small-cap shipping-paraf">ESTIMATE DELIVERY DATE:</p>
+
+                                <p class="shipping-paraf">Between <b>July 21th 2022 14:00h.</b> and <b>July 21th 2022
+                                        20:00h.</b></p>
                             </div>
-                        </article>
-                        <input type="checkbox" id="terms" />
-                        <label for="terms">I have read the terms and conditions</label>
-                        <p>Error Message</p>
-                        <button class="btn_right">Buy Now</button>
-                    </section>
-                    <section>
-                        <p>Your Order:</p>
-                        <hr />
-                        <p>producto: precio producto</p>
-                        <p>tipo de envio: precio del envio</p>
-                        <hr />
-                        <p>total: producto + tipo de envio</p>
-                    </section>
-                </div>
+                        </div>
+                        <div class="terms_conditions">
+                            <input type="checkbox" id="terms" />
+                            <label for="terms">I have read and I accept the terms and conditions</label>
+                        </div>
+                        <p class="term_condition_error hidden">Please accept terms and conditions.</p>
+                        <button class="btn-next order_button">Buy Now</button>
+                    </articule>
+                    <articule class="order-price">
+                        <p class="order_price_title">Your Order:</p>
+
+                        <p class="order_price_name"><b>Product name:</b> 7.8$</p>
+                        <p class="order_price_shipping"><b>Premium Shipping: </b>12.9$</p>
+                        <hr>
+                        <p class="order_price_total"><b>Total:</b> 20.4$</p>
+                    </articule>
+                    <article class="registration_time">
+                        <p> Your registration took: <b>3 minutes and 23 seconds</b> </p>
+                    </article>
+                </section>
             </section>
         </div>
     </main>
