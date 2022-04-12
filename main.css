@@ -231,9 +231,7 @@ main{
     justify-self: flex-end;
 }
 
-.hidden {
-    display: none;
-}
+
 
 
 @media screen and (min-width: 600px) {
@@ -245,6 +243,7 @@ main{
     }
     .main_product_left{
         height: 100%;
+        display: flex;
     }
     .main_product_left_products{
         display: flex;
@@ -257,7 +256,8 @@ main{
     }
     .main_product_right{
         height: 100%;
-        justify-content: space-around;
+        justify-content: flex-start;
+
     }
     .product_information{
         display: flex;
@@ -313,5 +313,16 @@ main{
         margin-top: -1.3rem;
     
     }
-    
+    .profile-form{
+        height: 90%;
+    }
+    .last_child_profile{
+        margin-bottom: 2rem;
+    }
+}
+.active{
+    display: flex;
+}
+.hidden {
+    display: none;
 }
