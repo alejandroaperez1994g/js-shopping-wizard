@@ -63,16 +63,16 @@
             <section class="main_product_right">
                 <div class="product_information ">
                     <h1 class="title">Ramune</h1>
-                    <p class="title_description">Pineapple Flavor</p>
+                    <p class="title_description">Strawberry Flavor</p>
                     <div class="products_flavors">
-                        <img src="./assests/images/product01.png" alt="" />
-                        <img src="./assests/images/product02.png" alt="" />
-                        <img src="./assests/images/product03.png" alt="" />
-                        <img src="./assests/images/product04.png" alt="" />
+                        <img src="./assests/images/product01.png" alt="pineapple" name="Pineapple Flavor" price="10.00 €" />
+                        <img src="./assests/images/product02.png" alt="strawberry" name="Strawberry Flavor" price="8.00 €" />
+                        <img src="./assests/images/product03.png" alt="lychee" name="Lychee Flavor" price="14.00 €" />
+                        <img src="./assests/images/product04.png" alt="yakisoba" name="Yakisoba Flavor" price="12.00 €" />
                     </div>
                     <div class="product_information_price">
                         <p class="price">Price</p>
-                        <p class="price">10.00 €</p>
+                        <p class="price flavorPrice">10.00 €</p>
                         <p class="price_description">200 ml</p>
                     </div>
                     <button id='buy_button' class="buy_button">BUY</button>
@@ -96,7 +96,7 @@
                             <input type="password" id="rpassword" />
                             <label for="username">Repeat password</label>
                         </article>
-                        <button class="btn-reset" type="reset">Clear form</button>
+                        <button id="btn-resetProfile" class="btn-reset" type="reset">Clear form</button>
                         <button id='next_button_profile' class="btn-next next_button_form" type="button">NEXT</button>
                     </form>
                 </section>
@@ -147,7 +147,7 @@
                             </select>
                             <input class="phone" type="text" name="ph" id="ph" placeholder="phone number" />
                         </article>
-                        <button class="btn-reset" type="reset">Clear form</button>
+                        <button id="btn-resetAddress" class="btn-reset" type="reset">Clear form</button>
                         <button id='next_button_address' class="btn-next next_button_form" type="button">NEXT</button>
                     </form>
                 </section>
@@ -190,7 +190,7 @@
                             <input name="image" id="image" type="file" />
                         </article>
 
-                        <button class="btn-reset" type="reset">Clear form</button>
+                        <button id="btn-resetShipping" class="btn-reset" type="reset">Clear form</button>
                         <button class="btn-next next_button_form" type="button">NEXT</button>
 
                     </form>
