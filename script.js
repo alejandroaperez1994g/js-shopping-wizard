@@ -5,8 +5,7 @@ const step4 = document.querySelector("#step_4");
 const buy_button = document.getElementById("buy_button");
 
 const main_product_right = document.querySelector(".main_product_right");
-const next_button_forms =
-    main_product_right.querySelectorAll(".next_button_form");
+const next_button_forms =   main_product_right.querySelectorAll(".next_button_form");
 
 const product_picture = document.querySelector(".main_product_left");
 const product_info = document.querySelector(".product_information");
@@ -16,16 +15,36 @@ const shipping_form = document.querySelector(".shipping-form");
 const finish_form = document.querySelector(".finish");
 
 const imgFlavors = document.querySelectorAll(".products_flavors img");
+const infoGallery = document.querySelectorAll(".main_product_left_products img");
+
+let currentProduct = document.querySelector(".main_product_left_product");
+let style = window.getComputedStyle(currentProduct, false);
+let srcCurrentProduct = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+console.log(srcCurrentProduct);
+
+Array.from(infoGallery).forEach((gallery) => {
+    gallery.addEventListener("mouseover", (event) => {
+        let srcInfo = event.target.src;
+        let infoMain = document.querySelector(".main_product_left_product");
+        infoMain.style.backgroundImage = `url(${srcInfo})`;
+    });
+
+    gallery.addEventListener("mouseout", (event) => {
+        let infoMain = document.querySelector(".main_product_left_product");
+        infoMain.style.backgroundImage = `url(${srcCurrentProduct})`;
+    });
+});
 
 Array.from(imgFlavors).forEach((flavor) => {
     flavor.addEventListener("click", (event) => {
         let srcFlavor = event.target.src;
-        let imgMain = document.querySelector('.main_product_left_product')
-        let nameFlavor = document.querySelector('.title_description')
-        let priceFlavor = document.querySelector('.flavorPrice')
+        srcCurrentProduct = srcFlavor;
+        let imgMain = document.querySelector(".main_product_left_product");
+        let nameFlavor = document.querySelector(".title_description");
+        let priceFlavor = document.querySelector(".flavorPrice");
         imgMain.style.backgroundImage = `url(${srcFlavor})`;
         nameFlavor.innerHTML = event.target.name;
-        priceFlavor.innerHTML = event.target.getAttribute('price');
+        priceFlavor.innerHTML = event.target.getAttribute("price");
     });
 });
 
