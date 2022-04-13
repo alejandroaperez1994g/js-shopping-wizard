@@ -153,10 +153,13 @@ button {
 }
 .order_button{
     justify-self: center;
-    width: 11.8rem;
-    height: 2.8rem;
-    font-size: 1.5rem;
+    width: 11rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
     padding: 0.5rem;
+    background-color: #d3d3d3;
+    color: #b8b8b8;
+    margin-bottom: 20px;
 }
 .order-price{
     border: 1px solid black;
