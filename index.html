@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <script src="https://kit.fontawesome.com/bace39851e.js" crossorigin="anonymous"></script>
     <script src="./script.js" defer></script>
     <title>Shopping</title>
@@ -17,7 +18,18 @@
 
 <body>
     <header></header>
-
+    <div class='popup hide'>
+        <div class='toast'>
+            <div class='content'>
+                <div class='icon'><i class='uil uil-exclamation-triangle'></i> </div>
+                <div class='details'>
+                    <span>You started registering <strong>2 min ago.</strong></span>
+                    <p>Hurry up!🚀</p>
+                </div>
+            </div>
+            <div class='close-icon'><i class='uil uil-times'></i> </div>
+        </div>
+    </div>
     <main>
         <div class="progress-bar">
             <div class="step">
@@ -65,10 +77,13 @@
                     <h1 class="title">Ramune</h1>
                     <p class="title_description">Strawberry Flavor</p>
                     <div class="products_flavors">
-                        <img src="./assests/images/product01.png" alt="pineapple" name="Pineapple Flavor" price="10.00 €" />
-                        <img src="./assests/images/product02.png" alt="strawberry" name="Strawberry Flavor" price="8.00 €" />
+                        <img src="./assests/images/product01.png" alt="pineapple" name="Pineapple Flavor"
+                            price="10.00 €" />
+                        <img src="./assests/images/product02.png" alt="strawberry" name="Strawberry Flavor"
+                            price="8.00 €" />
                         <img src="./assests/images/product03.png" alt="lychee" name="Lychee Flavor" price="14.00 €" />
-                        <img src="./assests/images/product04.png" alt="yakisoba" name="Yakisoba Flavor" price="12.00 €" />
+                        <img src="./assests/images/product04.png" alt="yakisoba" name="Yakisoba Flavor"
+                            price="12.00 €" />
                     </div>
                     <div class="product_information_price">
                         <p class="price">Price</p>
