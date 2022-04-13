@@ -1,21 +1,19 @@
 .popup{
-    position: relative;
-    top: 170px;
-    right: -70px;
+    position: absolute;
+    top: 130px;
+    right: 75px;
     animation: show_toast 1s ease forwards;
-    width: 430px;
-    box-shadow:border-box;
 }
 
 @keyframes show_toast {
     0%{
-      transform: translateX(100%)
+      opacity:0.2;
     }
     40%{
-      transform: translateX(10%)
+      opacity:0.6;
     }
     80%, 100%{
-      transform: translateX(30px)
+      opacity:1;
     }
 }
 
@@ -25,16 +23,17 @@
 
 @keyframes hide_toast {
     0%{
-      transform: translateX(30px)
+      opacity:0.8;
     }
     40%{
-      transform: translateX(10%)
+      opacity:0.5;
     }
     80%, 100%{
       opacity:0;
       pointer_events: none;
-      transform: translateX(100%)
+
     }
+
 }
 
 .popup .toast{
@@ -107,5 +106,8 @@
         top: 20px;
         right: 70px;
 
+    }
+    .toast .close-icon{
+        display: block;
     }
 }
