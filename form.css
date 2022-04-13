@@ -140,12 +140,11 @@ button {
 }
 .terms_conditions input{
     width: 25px;
-    margin-top: 0.15rem;
+    /* margin-top: 0.15rem; */
     margin-right: 0.5rem;
 }
 .term_condition_error{
     margin-top: 1rem;
-
     background: rgb(233, 165, 165);
     padding: 0.3rem;
     border-radius: 4px;
@@ -159,7 +158,7 @@ button {
     padding: 0.5rem;
     background-color: #d3d3d3;
     color: #b8b8b8;
-    margin-bottom: 20px;
+    margin-top: 1rem;
 }
 .order-price{
     border: 1px solid black;
@@ -190,4 +189,25 @@ button {
     background: #ebfade;
     border-radius: 4px;
     padding: 0.5rem;
+}
+.address-form, .shipping-form, .finish{
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 500px;
+}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+@media screen and (min-width: 600px) {
+    .address-form, .shipping-form{
+        overflow: hidden;
+        overflow-y: scroll;
+        height: 500px;
+    }
+    ::-webkit-scrollbar {
+        width: 0;  /* Remove scrollbar space */
+        background: transparent;  /* Optional: just make scrollbar invisible */
+    }
 }
