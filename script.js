@@ -28,6 +28,23 @@ let style = window.getComputedStyle(currentProduct, false);
 let srcCurrentProduct = style.backgroundImage.slice(4, -1).replace(/"/g, "");
 console.log(srcCurrentProduct);
 
+const termsCheck = document.getElementById('terms');
+const buyEnabled = document.getElementById('buyNow');
+
+termsCheck.onchange = function () {
+  if (this.checked){
+    buyEnabled.disabled = false;
+    buyEnabled.style.backgroundColor = '#FFAAA7',
+    buyEnabled.style.color = '#fff',
+    buyEnabled.style.cursor = 'pointer'
+  } else {
+    buyEnabled.disabled = true;
+    buyEnabled.style.backgroundColor = '#d3d3d3',
+    buyEnabled.style.color = '#b8b8b8',
+    buyEnabled.style.cursor = 'default'
+  }
+}
+
 Array.from(infoGallery).forEach((gallery) => {
   gallery.addEventListener("mouseover", (event) => {
     let srcInfo = event.target.src;
