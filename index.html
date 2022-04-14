@@ -94,22 +94,26 @@
                 </div>
                 <section class="profile-form hidden">
                     <h2>Profile</h2>
-                    <form>
+                    <form id="form1" >
                         <article class="input_text">
                             <input type="text" id="uname" name="uname" />
                             <label for="username">Username</label>
+                            <div class="error"></div>
                         </article>
                         <article class="input_text">
                             <input type="email" id="email" />
                             <label for="username">Email</label>
+                            <div class="error"></div>
                         </article>
                         <article class="input_text">
                             <input type="password" id="password" />
                             <label for="username">Password</label>
+                            <div class="error"></div>
                         </article>
                         <article class="input_text last_child_profile">
                             <input type="password" id="rpassword" />
                             <label for="username">Repeat password</label>
+                            <div class="error"></div>
                         </article>
                         <button id="btn-resetProfile" class="btn-reset" type="reset">Clear form</button>
                         <button id='next_button_profile' class="btn-next next_button_form" type="button">NEXT</button>
@@ -121,26 +125,32 @@
                         <article class="input_text">
                             <input type="text" id="fname" name="fname" />
                             <label for="fname">First name</label>
+                            <div class="error"></div>
                         </article>
                         <article class="input_text">
                             <input type="text" id="lname" name="lname" />
                             <label for="lname">Last name</label>
+                            <div class="error"></div>
                         </article>
                         <article class="input_text">
                             <input type="text" id="bday" name="bday" />
                             <label for="bday">Birthday</label>
+                            <div class="error"></div>
                         </article>
                         <article class="input_text">
                             <input type="text" id="address1" name="address1" />
                             <label for="address1">Address 1</label>
+                            <div class="error"></div>
                         </article>
                         <article class="input_text">
                             <input type="text" id="address2" name="address2" />
                             <label for="address1">Address 2</label>
+                            <div class="error"></div>
                         </article>
                         <article class="input_text">
                             <input type="text" id="posCode" name="posCode" />
                             <label for="posCode">Postal Code</label>
+                            <div class="error"></div>
                         </article><br>
                         <article class="input_select">
                             <select name="country" id="country">
@@ -151,6 +161,7 @@
                                 <option value="germany">Germany</option>
                                 <option value="greece">Greece</option>
                             </select><br>
+                            <div class="error"></div>
                         </article>
                         <article id="" class="input_select prefix">
                             <select id="prefix" name="country">
@@ -161,6 +172,7 @@
                                 <option value="+30">+30 GRC</option>
                             </select>
                             <input class="phone" type="text" name="ph" id="ph" placeholder="phone number" />
+                            <div class="error"></div>
                         </article>
                         <button id="btn-resetAddress" class="btn-reset" type="reset">Clear form</button>
                         <button id='next_button_address' class="btn-next next_button_form" type="button">NEXT</button>

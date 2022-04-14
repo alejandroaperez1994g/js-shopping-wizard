@@ -127,3 +127,92 @@ step4.addEventListener("click", () => {
   shipping_form.classList.add("hidden");
   finish_form.classList.remove("hidden");
 });
+
+//PROFILE FORM VALIDATION
+const username = document.querySelector('#uname');
+const email = document.querySelector('#email');
+const password = document.querySelector('#password');
+const rpassword = document.querySelector('#rpassword');
+const form1 = document.querySelector('#form1');
+
+form1.addEventListener('focusout', () => {
+    validateInputs();
+});
+
+const validateInputs = () => {
+    const usernameValue = username.value.trim();
+    const emailValue = email.value.trim();
+    const passwordValue = password.value.trim();
+    const rPasswordValue = rpassword.value.trim();
+
+    //username
+    if(usernameValue === '') {
+        setError(username, 'Username is required');
+    } else if(usernameValue.length < 5){
+        setError(username, 'Username is too short');
+    } else if(usernameValue.length > 20){
+        setError(username, 'Username is too long');
+    }else {
+        setSuccess(username);
+    }
+
+    //email
+    if(emailValue === ''){
+        setError(email, 'Email is required');
+    }else if(!isValidEmail(emailValue)){
+        setError(email, 'Provide a valid email address');
+    }else if((!isValidEmail(emailValue)) || (emailValue.length > 50)){
+        setError(email, 'Provide a valid email address');
+    }else{
+        setSuccess(email);
+    }
+
+    //password
+    if(passwordValue === ''){
+        setError(password, 'Password is required');
+    }else if(passwordValue.length < 8){
+        setError(password, 'Password must be at least 8 characters');
+    }else if(!isValidPassword(passwordValue)){
+        setError(password, 'Password require one number, one uppercase character, one lowercase character, and one special character');
+    }else{
+        setSuccess(password);
+    }
+
+    //repeat password
+    if(rPasswordValue === ''){
+        setError(rpassword, 'Please confirm your password');
+    }else if(rpassword !== password){
+        setError(rpassword, "Passwords doesn't match");
+    }else{
+        setSuccess(rpassword);
+    }
+
+}
+
+const isValidEmail = email => {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+const isValidPassword = password => {
+    const decimal =  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+    return decimal.test(String(password));
+}
+
+const setError = (element, message) => {
+    const inputText = element.parentElement;
+    const errorDisplay = inputText.querySelector('.error');
+
+    errorDisplay.innerText = message;
+    inputText.classList.add('error');
+    inputText.classList.remove('success');
+}
+
+const setSuccess = element => {
+    const inputText = element.parentElement;
+    const errorDisplay = inputText.querySelector('.error');
+
+    errorDisplay.innerText = '';
+    inputText.classList.add('success');
+    inputText.classList.remove('error');
+}
