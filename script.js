@@ -8,10 +8,12 @@ const buy_button = document.getElementById("buy_button");
 let minutesCount = 0;
 const popupInfo = document.querySelector(".popup");
 let intervalPopup;
+const allForms = document.querySelectorAll(".form");
 
 const main_product_right = document.querySelector(".main_product_right");
 const next_button_forms =
   main_product_right.querySelectorAll(".next_button_form");
+const shippingSelectors = document.querySelectorAll('input[type="radio"]');
 
 const product_picture = document.querySelector(".main_product_left");
 const product_info = document.querySelector(".product_information");
@@ -32,21 +34,21 @@ let srcCurrentProduct = style.backgroundImage.slice(4, -1).replace(/"/g, "");
 const termsCheck = document.getElementById("terms");
 const buyEnabled = document.getElementById("buyNow");
 
-const giftCheck = document.getElementById('gift-check');
-const giftText = document.getElementById('gift-message');
-const imageButton = document.querySelector('.select-image');
+const giftCheck = document.getElementById("gift-check");
+const giftText = document.getElementById("gift-message");
+const imageButton = document.querySelector(".select-image");
 
-giftCheck.onchange = function() {
-    if (this.checked) {
-        giftText.style.display = 'block'
-        imageButton.style.display = 'block'
-    } else {
-        giftText.style.display = 'none'
-        imageButton.style.display = 'none'
-    }
-}
+giftCheck.onchange = function () {
+  if (this.checked) {
+    giftText.style.display = "block";
+    imageButton.style.display = "block";
+  } else {
+    giftText.style.display = "none";
+    imageButton.style.display = "none";
+  }
+};
 
-termsCheck.onchange = function() {
+termsCheck.onchange = function () {
   if (this.checked) {
     buyEnabled.disabled = false;
     (buyEnabled.style.backgroundColor = "#FFAAA7"),
@@ -62,7 +64,21 @@ termsCheck.onchange = function() {
 
 buyEnabled.addEventListener("click", () => {
   getTimeOfRegistration();
+  finishRegistration();
+  stopInterval();
 });
+
+function finishRegistration() {
+  const orderPrice = document.querySelector(".order_price_title");
+  const buyButton = document.getElementById("buyNow");
+  const termsConditions = document.querySelector(".terms_conditions");
+  const completeOrder = document.querySelector(".complete_order");
+
+  orderPrice.textContent = "Order details";
+  buyButton.classList.add("hidden");
+  termsConditions.classList.add("hidden");
+  completeOrder.classList.remove("hidden");
+}
 
 Array.from(infoGallery).forEach((gallery) => {
   gallery.addEventListener("mouseover", (event) => {
@@ -92,17 +108,39 @@ Array.from(imgFlavors).forEach((flavor) => {
 
 buy_button.addEventListener("click", (e) => {
   const currentPrice = document.querySelector(".flavorPrice");
+  const productName = document.querySelector(".title_description");
   shoppingData["price"] = currentPrice.textContent.slice(0, -2);
+  shoppingData["productName"] = productName.textContent;
   product_info.classList.add("hidden");
   profile_form.classList.remove("hidden");
   startInterval();
 });
 
-Array.from(next_button_forms).forEach((button) => {
-  button.addEventListener("click", (event) => {
+Array.from(allForms).forEach((button) => {
+  button.addEventListener("submit", (event) => {
     next_form(event);
   });
 });
+
+function setShippingDays(event) {
+  let days = parseInt(event.target.value);
+  const options = {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    hour: "2-digit",
+  };
+  let shippingDay = new Date();
+  shippingDay.setDate(shippingDay.getDate() + days);
+  shippingDay.setHours(14);
+  shippingDay.setMinutes(0);
+  firstRangeOfDates = shippingDay.toLocaleDateString("en-US", options);
+  shippingDay.setHours(20);
+  shippingDay.setMinutes(0);
+  secondRangeOfDates = shippingDay.toLocaleDateString("en-US", options);
+  shoppingData["rangeOfDelivery"] = [firstRangeOfDates, secondRangeOfDates];
+  return [firstRangeOfDates, secondRangeOfDates];
+}
 
 function getTimeOfRegistration() {
   const finalDate = new Date();
@@ -123,15 +161,20 @@ function millisToMinutesAndSeconds(millis) {
   return [minutes, seconds];
 }
 
+function resetAll() {
+  window.location.reload();
+}
+
 function next_form(event) {
-  const sectionForm = event.target.parentElement.parentElement;
+  event.preventDefault();
+  const sectionForm = event.target.parentElement;
   sectionForm.classList.add("hidden");
   sectionForm.nextElementSibling.classList.remove("hidden");
   saveData(event);
 }
 
 function saveData(event) {
-  let childs = event.target.parentElement.children;
+  let childs = event.target.children;
   Array.from(childs).forEach((child) => {
     Array.from(child.children).forEach((subChild) => {
       switch (subChild.nodeName) {
@@ -177,13 +220,36 @@ function getGiftMessage(element) {
 function getDaysOfShippment(element) {
   if (element.checked === true) {
     shoppingData["shippingDays"] = element.value;
+    shoppingData["typeOfShipping"] = element.getAttribute("shipping");
+    shoppingData["priceofshipping"] = element.getAttribute("price");
   }
+  setFinishData();
 }
 
-const show_toast = (e) => {
+function setFinishData() {
+  const nameOfProduct = document.querySelector(".nameOfProduct");
+  const priceOfProduct = document.querySelector(".priceOfProduct");
+  const rangeOfDelivery = document.querySelector(".rangeOfDelivery");
+
+  const orderPrice = document.querySelector(".order_price_name");
+  const orderShipping = document.querySelector(".order_price_shipping");
+  const orderTotal = document.querySelector(".order_price_total");
+
+  nameOfProduct.innerHTML = `${shoppingData.productName}`;
+  priceOfProduct.innerHTML = `Price: ${shoppingData.price}`;
+  rangeOfDelivery.innerHTML = `Between <b>${shoppingData.rangeOfDelivery[0]}</b> and <b>${shoppingData.rangeOfDelivery[1]}</b>`;
+  orderPrice.innerHTML = `<b>${shoppingData.productName}:</b> ${shoppingData.price}`;
+  orderShipping.innerHTML = `<b>${shoppingData.typeOfShipping}:</b> ${shoppingData.priceofshipping}`;
+  orderTotal.innerHTML = `<b>Total:</b> ${
+    parseFloat(shoppingData.price) + parseFloat(shoppingData.priceofshipping)
+  }`;
+}
+
+function show_toast() {
   minutesCount += 1;
   if (minutesCount > 5) {
     stopInterval();
+    resetAll();
   } else {
     const close_icon = document.querySelector(".close-icon");
     let textInfo = popupInfo.querySelector("span");
@@ -199,7 +265,7 @@ const show_toast = (e) => {
       popupInfo.classList.add("hide");
     }, 5000);
   }
-};
+}
 
 function startInterval() {
   intervalPopup = setInterval(() => {
@@ -208,6 +274,22 @@ function startInterval() {
 }
 function stopInterval() {
   clearInterval(intervalPopup);
+}
+
+Array.from(shippingSelectors).forEach((selector) => {
+  selector.addEventListener("click", (e) => {
+    const rangeText = document.querySelector(".rangeOfShipping");
+    const range = setShippingDays(e);
+    rangeText.innerHTML = `<b>${range[0]}</b> and <b>${range[1]}</b>`;
+    showEstimatedDates();
+  });
+});
+
+function showEstimatedDates() {
+  const estimatedDates = document.querySelectorAll(".shipping-paraf");
+  Array.from(estimatedDates).forEach((elements) => {
+    elements.classList.remove("hidden");
+  });
 }
 
 step1.addEventListener("click", () => {
