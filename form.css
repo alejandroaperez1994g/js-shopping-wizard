@@ -193,7 +193,7 @@ button {
 .address-form, .shipping-form, .finish{
     overflow: hidden;
     overflow-y: scroll;
-    height: 500px;
+    height: 700px;
 }
 ::-webkit-scrollbar {
     width: 0;  /* Remove scrollbar space */
