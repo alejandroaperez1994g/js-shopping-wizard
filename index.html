@@ -94,44 +94,44 @@
                 </div>
                 <section class="profile-form hidden">
                     <h2>Profile</h2>
-                    <form>
+                    <form class="form">
                         <article class="input_text">
-                            <input type="text" id="uname" name="uname" />
+                            <input type="text" id="username" name="username" required />
                             <label for="username">Username</label>
                         </article>
                         <article class="input_text">
-                            <input type="email" id="email" />
-                            <label for="username">Email</label>
+                            <input type="email" id="email" required />
+                            <label for="email">Email</label>
                         </article>
                         <article class="input_text">
-                            <input type="password" id="password" />
-                            <label for="username">Password</label>
+                            <input type="password" id="password" required />
+                            <label for="password">Password</label>
                         </article>
                         <article class="input_text last_child_profile">
-                            <input type="password" id="rpassword" />
-                            <label for="username">Repeat password</label>
+                            <input type="password" id="rpassword" required />
+                            <label for="rpassword">Repeat password</label>
                         </article>
                         <button id="btn-resetProfile" class="btn-reset" type="reset">Clear form</button>
-                        <button id='next_button_profile' class="btn-next next_button_form" type="button">NEXT</button>
+                        <button id='next_button_profile' class="btn-next next_button_form" type="submit">NEXT</button>
                     </form>
                 </section>
                 <section class="address-form hidden">
                     <h2>Address</h2>
-                    <form>
+                    <form class="form">
                         <article class="input_text">
-                            <input type="text" id="fname" name="fname" />
+                            <input type="text" id="fname" name="fname" required />
                             <label for="fname">First name</label>
                         </article>
                         <article class="input_text">
-                            <input type="text" id="lname" name="lname" />
+                            <input type="text" id="lname" name="lname" required />
                             <label for="lname">Last name</label>
                         </article>
                         <article class="input_text">
-                            <input type="text" id="bday" name="bday" />
+                            <input type="text" id="bday" name="bday" required />
                             <label for="bday">Birthday</label>
                         </article>
                         <article class="input_text">
-                            <input type="text" id="address1" name="address1" />
+                            <input type="text" id="address1" name="address1" required />
                             <label for="address1">Address 1</label>
                         </article>
                         <article class="input_text">
@@ -139,11 +139,11 @@
                             <label for="address1">Address 2</label>
                         </article>
                         <article class="input_text">
-                            <input type="text" id="posCode" name="posCode" />
+                            <input type="text" id="posCode" name="posCode" required />
                             <label for="posCode">Postal Code</label>
                         </article><br>
                         <article class="input_select">
-                            <select name="country" id="country">
+                            <select name="country" id="country" required>
                                 <option selected disabled>Select country...</option>
                                 <option value="andorra">Andorra</option>
                                 <option value="spain">Spain</option>
@@ -153,44 +153,46 @@
                             </select><br>
                         </article>
                         <article id="" class="input_select prefix">
-                            <select id="prefix" name="prefix">
+                            <select id="prefix" name="prefix" required>
                                 <option value="+376">+376 AND</option>
                                 <option value="+34">+34 ESP</option>
                                 <option value="+33">+33 FRA</option>
                                 <option value="+49">+49 DEU</option>
                                 <option value="+30">+30 GRC</option>
                             </select>
-                            <input class="phone" type="text" name="phone" id="ph" placeholder="phone number" />
+                            <input class="phone" type="text" name="phone" id="ph" placeholder="phone number" required />
                         </article>
                         <button id="btn-resetAddress" class="btn-reset" type="reset">Clear form</button>
-                        <button id='next_button_address' class="btn-next next_button_form" type="button">NEXT</button>
+                        <button id='next_button_address' class="btn-next next_button_form" type="submit">NEXT</button>
                     </form>
                 </section>
                 <section class="shipping-form hidden">
                     <h2>Shipping</h2>
                     <p></p>
-                    <form>
+                    <form class="form">
                         <article class="shipping-free">
-                            <input type="radio" id="free" value="3" name="shipment" />
+                            <input type="radio" id="free" value="3" price="0" name="shipment"
+                                shipping="Free Shipment" />
                             <label for="free">Free shipment (72h)</label>
                         </article>
 
                         <article class="shipping-free">
-                            <input type="radio" id="extra" value="2" name="shipment" />
+                            <input type="radio" id="extra" value="2" price="3.99" name="shipment"
+                                shipping="Extra Shipment" />
                             <label for="extra">Extra shipment (48h) <b> 3,99€</b></label>
                         </article>
 
                         <article class="shipping-free">
-                            <input type="radio" id="express" value="1" name="shipment" />
-                            <label for="username">Express shipment (24h) <b>7,99€</b></label>
+                            <input type="radio" id="express" value="1" name="shipment" price="7.99"
+                                shipping="Express Shipment" required />
+                            <label for="express">Express shipment (24h) <b>7,99€</b></label>
                         </article>
 
-                        <p class="shipping-paraf"><b>Your order will arrive:</b></p>
+                        <p class="shipping-paraf hidden"><b>Your order will arrive:</b></p>
 
-                        <p class="small-cap shipping-paraf">ESTIMATE DELIVERY DATE:</p>
+                        <p class="small-cap shipping-paraf hidden">ESTIMATE DELIVERY DATE:</p>
 
-                        <p class="shipping-paraf">Between <b>July 21th 2022 14:00h.</b> and <b>July 21th 2022
-                                20:00h.</b></p>
+                        <p class="shipping-paraf rangeOfShipping hidden"></b></p>
 
                         <article class="shipping-free gift-check">
                             <input type="checkbox" id="gift-check" />
@@ -206,7 +208,7 @@
                         </article>
 
                         <button id="btn-resetShipping" class="btn-reset" type="reset">Clear form</button>
-                        <button class="btn-next next_button_form" type="button">NEXT</button>
+                        <button class="btn-next next_button_form" type="submit">NEXT</button>
 
                     </form>
                 </section>
@@ -221,12 +223,14 @@
                         <div>
                             <img src="" alt="" style="height: 60px" />
                             <div>
-                                <p>Name of the product</p>
-                                <p>Price: price of the product</p>
+                                <p class="nameOfProduct">Name of the product</p>
+                                <p class="priceOfProduct">Price: price of the product</p>
                                 <p class="small-cap shipping-paraf">ESTIMATE DELIVERY DATE:</p>
 
-                                <p class="shipping-paraf">Between <b>July 21th 2022 14:00h.</b> and <b>July 21th 2022
-                                        20:00h.</b></p>
+                                <p class="shipping-paraf rangeOfDelivery">Between <b>July 21th 2022 14:00h.</b> and
+                                    <b>July 21th 2022
+                                        20:00h.</b>
+                                </p>
                             </div>
                         </div>
                         <div class="terms_conditions">
@@ -237,7 +241,7 @@
                         <button id="buyNow" class="btn-next order_button" disabled>Buy Now</button>
                     </articule>
                     <articule class="order-price">
-                        <p class="order_price_title">Your Order:</p>
+                        <p class="order_price_title">Payment details:</p>
 
                         <p class="order_price_name"><b>Product name:</b> 7.8€</p>
                         <p class="order_price_shipping"><b>Premium Shipping: </b>12.9€</p>
