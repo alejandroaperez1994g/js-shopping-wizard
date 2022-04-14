@@ -23,6 +23,13 @@ body{
     background-repeat: no-repeat;
 }
 
+.logo {
+    position: absolute;
+    width: 4em;
+    left: 70px;
+    top: 150px;
+}
+
 main{
     background-color: #fff;
     -webkit-box-shadow: 6px 8px 12px 0px rgba(0,0,0,0.39); 
@@ -240,6 +247,14 @@ main{
     main{
         flex-direction: column;
     }
+
+    .logo {
+        position: relative;
+        width: 8em;
+        top: -24.5rem;
+        left: 1rem;
+    }
+
     .wrapper{
         flex-direction: row;
     }
