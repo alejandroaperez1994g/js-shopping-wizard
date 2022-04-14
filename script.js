@@ -31,7 +31,21 @@ let srcCurrentProduct = style.backgroundImage.slice(4, -1).replace(/"/g, "");
 const termsCheck = document.getElementById("terms");
 const buyEnabled = document.getElementById("buyNow");
 
-termsCheck.onchange = function () {
+const giftCheck = document.getElementById('gift-check');
+const giftText = document.getElementById('gift-message');
+const imageButton = document.querySelector('.select-image');
+
+giftCheck.onchange = function() {
+    if (this.checked) {
+        giftText.style.display = 'block'
+        imageButton.style.display = 'block'
+    } else {
+        giftText.style.display = 'none'
+        imageButton.style.display = 'none'
+    }
+}
+
+termsCheck.onchange = function() {
   if (this.checked) {
     buyEnabled.disabled = false;
     (buyEnabled.style.backgroundColor = "#FFAAA7"),
