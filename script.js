@@ -2,6 +2,7 @@ const step1 = document.querySelector("#step_1");
 const step2 = document.querySelector("#step_2");
 const step3 = document.querySelector("#step_3");
 const step4 = document.querySelector("#step_4");
+let shoppingData = {};
 const buy_button = document.getElementById("buy_button");
 let minutesCount = 0;
 const popupInfo = document.querySelector(".popup");
@@ -26,24 +27,23 @@ const infoGallery = document.querySelectorAll(
 let currentProduct = document.querySelector(".main_product_left_product");
 let style = window.getComputedStyle(currentProduct, false);
 let srcCurrentProduct = style.backgroundImage.slice(4, -1).replace(/"/g, "");
-console.log(srcCurrentProduct);
 
-const termsCheck = document.getElementById('terms');
-const buyEnabled = document.getElementById('buyNow');
+const termsCheck = document.getElementById("terms");
+const buyEnabled = document.getElementById("buyNow");
 
 termsCheck.onchange = function () {
-  if (this.checked){
+  if (this.checked) {
     buyEnabled.disabled = false;
-    buyEnabled.style.backgroundColor = '#FFAAA7',
-    buyEnabled.style.color = '#fff',
-    buyEnabled.style.cursor = 'pointer'
+    (buyEnabled.style.backgroundColor = "#FFAAA7"),
+      (buyEnabled.style.color = "#fff"),
+      (buyEnabled.style.cursor = "pointer");
   } else {
     buyEnabled.disabled = true;
-    buyEnabled.style.backgroundColor = '#d3d3d3',
-    buyEnabled.style.color = '#b8b8b8',
-    buyEnabled.style.cursor = 'default'
+    (buyEnabled.style.backgroundColor = "#d3d3d3"),
+      (buyEnabled.style.color = "#b8b8b8"),
+      (buyEnabled.style.cursor = "default");
   }
-}
+};
 
 Array.from(infoGallery).forEach((gallery) => {
   gallery.addEventListener("mouseover", (event) => {
@@ -72,6 +72,8 @@ Array.from(imgFlavors).forEach((flavor) => {
 });
 
 buy_button.addEventListener("click", (e) => {
+  const currentPrice = document.querySelector(".flavorPrice");
+  shoppingData["price"] = currentPrice.textContent.slice(0, -2);
   product_info.classList.add("hidden");
   profile_form.classList.remove("hidden");
   startInterval();
@@ -87,6 +89,57 @@ function next_form(event) {
   const sectionForm = event.target.parentElement.parentElement;
   sectionForm.classList.add("hidden");
   sectionForm.nextElementSibling.classList.remove("hidden");
+  saveData(event);
+}
+
+function saveData(event) {
+  let childs = event.target.parentElement.children;
+  Array.from(childs).forEach((child) => {
+    Array.from(child.children).forEach((subChild) => {
+      switch (subChild.nodeName) {
+        case "INPUT":
+          if (!subChild.nextElementSibling) {
+            shoppingData[subChild.name] = subChild.value;
+          } else if (subChild.name === "shipment") {
+            getDaysOfShippment(subChild);
+          } else if (subChild.id === "gift-check") {
+            getGiftMessage(subChild);
+          } else {
+            shoppingData[
+              subChild.nextElementSibling.textContent.toLowerCase()
+            ] = subChild.value;
+          }
+          break;
+        case "SELECT":
+          shoppingData[subChild.name] =
+            subChild.options[subChild.selectedIndex].text;
+          break;
+        default:
+          break;
+      }
+    });
+  });
+}
+
+function getGiftMessage(element) {
+  let fileSelected = document.getElementById("image");
+  if (element.checked) {
+    let textMessage = element.parentElement.nextElementSibling;
+    shoppingData["giftMessage"] = textMessage.value;
+  }
+  if (fileSelected.files.length) {
+    shoppingData["giftImageFile"] = {
+      name: fileSelected.files[0].name,
+      size: fileSelected.files[0].size,
+      type: fileSelected.files[0].type,
+    };
+  }
+}
+
+function getDaysOfShippment(element) {
+  if (element.checked === true) {
+    shoppingData["shippingDays"] = element.value;
+  }
 }
 
 const show_toast = (e) => {
