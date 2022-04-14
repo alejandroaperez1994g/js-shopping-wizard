@@ -24,10 +24,11 @@ body{
 }
 
 .logo {
-    position: absolute;
-    width: 4em;
-    left: 70px;
-    top: 150px;
+    content: url(./assests/images/logo-mobile.png);
+    position: fixed;
+    width: 12rem;
+    top: -4.5rem;
+    left: 3.2rem;
 }
 
 main{
@@ -249,10 +250,11 @@ main{
     }
 
     .logo {
-        position: relative;
-        width: 8em;
-        top: -24.5rem;
-        left: 1rem;
+        content: url(./assests/images/logo.png);
+        position: absolute;
+        width: 8rem;
+        top: 4rem;
+        left: 13rem;
     }
 
     .wrapper{
