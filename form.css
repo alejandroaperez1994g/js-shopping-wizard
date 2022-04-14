@@ -185,6 +185,7 @@ button {
     margin-bottom: 1.5rem;
 }
 .registration_time{
+    display: none;
     margin-top: 2rem;
     background: #ebfade;
     border-radius: 4px;
@@ -193,18 +194,15 @@ button {
 .address-form, .shipping-form, .finish{
     overflow: hidden;
     overflow-y: scroll;
-    height: 700px;
+    height: 500px;
 }
-::-webkit-scrollbar {
-    width: 0;  /* Remove scrollbar space */
-    background: transparent;  /* Optional: just make scrollbar invisible */
-}
+
 
 @media screen and (min-width: 600px) {
     .address-form, .shipping-form{
         overflow: hidden;
         overflow-y: scroll;
-        height: 500px;
+        height: 600px;
     }
     ::-webkit-scrollbar {
         width: 0;  /* Remove scrollbar space */
