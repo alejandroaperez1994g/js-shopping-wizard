@@ -187,7 +187,9 @@ function saveData(event) {
             getGiftMessage(subChild);
           } else {
             shoppingData[
-              subChild.nextElementSibling.textContent.toLowerCase()
+              subChild.nextElementSibling.textContent
+                .toLowerCase()
+                .replace(/ /g, "")
             ] = subChild.value;
           }
           break;
