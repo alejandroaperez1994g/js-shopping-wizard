@@ -2,6 +2,7 @@ const step1 = document.querySelector("#step_1");
 const step2 = document.querySelector("#step_2");
 const step3 = document.querySelector("#step_3");
 const step4 = document.querySelector("#step_4");
+const initialDate = new Date();
 let shoppingData = {};
 const buy_button = document.getElementById("buy_button");
 let minutesCount = 0;
@@ -59,6 +60,10 @@ termsCheck.onchange = function() {
   }
 };
 
+buyEnabled.addEventListener("click", () => {
+  getTimeOfRegistration();
+});
+
 Array.from(infoGallery).forEach((gallery) => {
   gallery.addEventListener("mouseover", (event) => {
     let srcInfo = event.target.src;
@@ -98,6 +103,25 @@ Array.from(next_button_forms).forEach((button) => {
     next_form(event);
   });
 });
+
+function getTimeOfRegistration() {
+  const finalDate = new Date();
+  const registrationTime = document.querySelector(".registration_time");
+  const difMilliseconds = Math.abs(finalDate - initialDate);
+  let totalTime = millisToMinutesAndSeconds(difMilliseconds);
+  if (totalTime[0] === 0) {
+    registrationTime.innerHTML = `Your registration took: <b>${totalTime[1]} seconds</b>`;
+  } else {
+    registrationTime.innerHTML = `Your registration took: <b>${totalTime[0]} minutes and ${totalTime[1]} seconds</b>`;
+  }
+  registrationTime.style.display = "block";
+}
+
+function millisToMinutesAndSeconds(millis) {
+  var minutes = Math.floor(millis / 60000);
+  var seconds = ((millis % 60000) / 1000).toFixed(0);
+  return [minutes, seconds];
+}
 
 function next_form(event) {
   const sectionForm = event.target.parentElement.parentElement;
