@@ -74,23 +74,23 @@ function next_form(event) {
 
 const show_toast = (e) => {
   minutesCount += 1;
-  // if (minutesCount > 5) {
-  //   stopInterval();
-  // } else {
-  const close_icon = document.querySelector(".close-icon");
-  let textInfo = popupInfo.querySelector("span");
-  textInfo.innerHTML = `You started registering <strong>${minutesCount} min ago.</strong>`;
-  popupInfo.classList.remove("hide");
+  if (minutesCount > 5) {
+    stopInterval();
+  } else {
+    const close_icon = document.querySelector(".close-icon");
+    let textInfo = popupInfo.querySelector("span");
+    textInfo.innerHTML = `You started registering <strong>${minutesCount} min ago.</strong>`;
+    popupInfo.classList.remove("hide");
 
-  close_icon.onclick = () => {
-    popupInfo.classList.add("hide");
-  };
+    close_icon.onclick = () => {
+      popupInfo.classList.add("hide");
+    };
 
-  setTimeout(() => {
-    console.log("time out");
-    popupInfo.classList.add("hide");
-  }, 5000);
-  // }
+    setTimeout(() => {
+      console.log("time out");
+      popupInfo.classList.add("hide");
+    }, 5000);
+  }
 };
 
 function startInterval() {
