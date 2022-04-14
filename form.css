@@ -83,6 +83,7 @@ button {
 
 .gift-message {
     margin-top: 20px;
+    display: none;
 }
 
 .shipping-paraf {
@@ -99,6 +100,7 @@ button {
 
 .select-image{
     margin-top: 30px;
+    display: none;
 }
 
 .select-image label{
