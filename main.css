@@ -71,11 +71,12 @@ main{
     font-weight: 500;
     font-size: 17px;
     line-height: 25px;
+    transition: 0.2s ;
 }
 
 .progress-bar .step:last-child .bullet::before,
 .progress-bar .step:last-child   .bullet::after{
-    display: none;
+    display:  none;
 }
 
 .progress-bar .step .bullet::before,
@@ -89,7 +90,20 @@ main{
     background: #262626;
 }
 
-.progress-bar .step .bullet::after{
+.progress-bar .step .bullet.active span{
+    display: none;
+}
+.progress-bar .step .check.active{
+    display:block;
+    color: #fff;
+}
+
+.progress-bar .step .bullet.active{
+     border-color: #d43f8d;
+     background: #d43f8d;
+}
+
+.progress-bar .step .bullet.active::after{
     background: #d43f8d;
     transform: scaleX(0 );
     transform-origin: left ;
@@ -102,7 +116,7 @@ main{
     }
 }
 
-.progress-bar .step span{
+.progress-bar .step .bullet span{
     font-weight: 500;
     font-size: 17px;
     line-height: 25px;
