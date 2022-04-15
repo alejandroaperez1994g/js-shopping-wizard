@@ -339,7 +339,7 @@ Array.from(shippingSelectors).forEach((selector) => {
 });
 
 //PROFILE FORM VALIDATION
-const username = document.querySelector("#uname");
+const username = document.querySelector("#username");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const rpassword = document.querySelector("#rpassword");
