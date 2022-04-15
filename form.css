@@ -37,6 +37,43 @@ input:focus~label {
     font-size: 1.08rem;
     color: #98DDCA;
 }
+/* FORM ERROR AND SUCCESS */
+/* input:focus~label {
+    font-size: 1.08rem;
+    color: #98DDCA;
+} 
+*/
+
+.input_text{
+    display: flex;
+    flex-direction: column;
+}
+
+.input_text input:focus{
+    border-color: #23bb92;
+}
+
+.input_text.error input {
+    border-color: #f15b5b;
+}
+
+.input_text .error{
+    color: #f15b5b;
+    font-size: 0.8rem;
+    height: 10px;
+}
+
+.error2{
+    color: #f15b5b;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+}
+
+.input-control.success input {
+    border-color: #09c372;
+}
+
+/* END FORM ERROR AND SUCCESS */
 
 button {
     margin-top: 3rem;
