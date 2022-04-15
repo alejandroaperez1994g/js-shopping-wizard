@@ -1,8 +1,8 @@
-const step1 = document.querySelector("#step_1");
-const step2 = document.querySelector("#step_2");
-const step3 = document.querySelector("#step_3");
-const step4 = document.querySelector("#step_4");
-const initialDate = new Date();
+const progressText = document.querySelectorAll(".step p");
+const progressCheck = document.querySelectorAll(".step .check");
+const bullet = document.querySelectorAll(".step .bullet");
+let current = 1;
+let initialDate;
 let shoppingData = {};
 const buy_button = document.getElementById("buy_button");
 let minutesCount = 0;
@@ -66,6 +66,10 @@ buyEnabled.addEventListener("click", () => {
   getTimeOfRegistration();
   finishRegistration();
   stopInterval();
+
+  setTimeout(() => {
+    resetAll();
+  }, 5000);
 });
 
 function finishRegistration() {
@@ -78,6 +82,7 @@ function finishRegistration() {
   buyButton.classList.add("hidden");
   termsConditions.classList.add("hidden");
   completeOrder.classList.remove("hidden");
+  getLastStepActive();
 }
 
 Array.from(infoGallery).forEach((gallery) => {
@@ -113,6 +118,7 @@ buy_button.addEventListener("click", (e) => {
   shoppingData["productName"] = productName.textContent;
   product_info.classList.add("hidden");
   profile_form.classList.remove("hidden");
+  initialDate = new Date();
   startInterval();
 });
 
@@ -162,7 +168,34 @@ function millisToMinutesAndSeconds(millis) {
 }
 
 function resetAll() {
-  window.location.reload();
+  finish_form.classList.add("hidden");
+  product_info.classList.remove("hidden");
+  shoppingData = {};
+  current = 1;
+  resetAllForms();
+  resetStepBar();
+  resetFinishForm();
+}
+
+function resetFinishForm() {
+  const orderPrice = document.querySelector(".order_price_title");
+  const checkInput = document.getElementById("terms");
+  const buyNowButton = document.getElementById("buyNow");
+  const buyButton = document.getElementById("buyNow");
+  const termsConditions = document.querySelector(".terms_conditions");
+  const completeOrder = document.querySelector(".complete_order");
+  const registrationTime = document.querySelector(".registration_time");
+
+  buyNowButton.disabled = true;
+  buyNowButton.style.color = "#b8b8b8";
+  buyNowButton.style.backgroundColor = "#d3d3d3";
+  buyNowButton.style.cursor = "default";
+  registrationTime.style.display = "none";
+  checkInput.checked = false;
+  orderPrice.textContent = "Payments details";
+  buyButton.classList.remove("hidden");
+  termsConditions.classList.remove("hidden");
+  completeOrder.classList.add("hidden");
 }
 
 function next_form(event) {
@@ -170,7 +203,25 @@ function next_form(event) {
   const sectionForm = event.target.parentElement;
   sectionForm.classList.add("hidden");
   sectionForm.nextElementSibling.classList.remove("hidden");
+  getLastStepActive();
   saveData(event);
+}
+
+function resetStepBar() {
+  const stepBullet = document.querySelectorAll(".bullet");
+  const stepCheck = document.querySelectorAll(".check");
+  const allSteps = Array.from(stepBullet).concat(Array.from(stepCheck));
+
+  allSteps.forEach((step) => {
+    step.classList.remove("active");
+  });
+}
+
+function resetAllForms() {
+  const forms = document.querySelectorAll(".form");
+  Array.from(forms).forEach((form) => {
+    form.reset();
+  });
 }
 
 function saveData(event) {
@@ -242,9 +293,9 @@ function setFinishData() {
   rangeOfDelivery.innerHTML = `Between <b>${shoppingData.rangeOfDelivery[0]}</b> and <b>${shoppingData.rangeOfDelivery[1]}</b>`;
   orderPrice.innerHTML = `<b>${shoppingData.productName}:</b> ${shoppingData.price}`;
   orderShipping.innerHTML = `<b>${shoppingData.typeOfShipping}:</b> ${shoppingData.priceofshipping}`;
-  orderTotal.innerHTML = `<b>Total:</b> ${
+  orderTotal.innerHTML = `<b>Total:</b> ${(
     parseFloat(shoppingData.price) + parseFloat(shoppingData.priceofshipping)
-  }`;
+  ).toFixed(2)}`;
 }
 
 function show_toast() {
@@ -294,28 +345,10 @@ function showEstimatedDates() {
   });
 }
 
-step1.addEventListener("click", () => {
-  console.log("step1");
-  product_info.classList.add("hidden");
-  profile_form.classList.remove("hidden");
-});
-step2.addEventListener("click", () => {
-  console.log("step2");
-  profile_form.classList.add("hidden");
-  address_form.classList.remove("hidden");
-  console.log(address_form.className);
-});
-step3.addEventListener("click", () => {
-  console.log("step3");
-  profile_form.classList.add("hidden");
-  address_form.classList.add("hidden");
-  shipping_form.classList.remove("hidden");
-  finish_form.classList.add("hidden");
-});
-step4.addEventListener("click", () => {
-  console.log("step4");
-  profile_form.classList.add("hidden");
-  address_form.classList.add("hidden");
-  shipping_form.classList.add("hidden");
-  finish_form.classList.remove("hidden");
-});
+function getLastStepActive() {
+  let progress_bar = document.querySelector(".progress-bar").children;
+  let childs = progress_bar.children;
+  bullet[current - 1].classList.add("active");
+  progressCheck[current - 1].classList.add("active");
+  current += 1;
+}
