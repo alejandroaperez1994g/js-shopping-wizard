@@ -121,7 +121,7 @@
                 </section>
                 <section class="address-form hidden">
                     <h2>Address</h2>
-                    <form>
+                    <form id="form2">
                         <article class="input_text">
                             <input type="text" id="fname" name="fname" />
                             <label for="fname">First name</label>
@@ -133,7 +133,7 @@
                             <div class="error"></div>
                         </article>
                         <article class="input_text">
-                            <input type="text" id="bday" name="bday" />
+                            <input type="date" id="bday" name="bday" />
                             <label for="bday">Birthday</label>
                             <div class="error"></div>
                         </article>
@@ -160,22 +160,26 @@
                                 <option value="france">France</option>
                                 <option value="germany">Germany</option>
                                 <option value="greece">Greece</option>
-                            </select><br>
-                            <div class="error"></div>
+                            </select>
+                            <div class="error2"></div>
                         </article>
                         <article id="" class="input_select prefix">
-                            <select id="prefix" name="country">
-                                <option value="+376">+376 AND</option>
-                                <option value="+34">+34 ESP</option>
-                                <option value="+33">+33 FRA</option>
-                                <option value="+49">+49 DEU</option>
-                                <option value="+30">+30 GRC</option>
+                            <select id="phCode" name="country">
+                                <option value="andorra">+376 AND</option>
+                                <option selected value="spain">+34 ESP</option>
+                                <option value="france">+33 FRA</option>
+                                <option value="germany">+49 DEU</option>
+                                <option value="greece">+30 GRC</option>
                             </select>
-                            <input class="phone" type="text" name="ph" id="ph" placeholder="phone number" />
-                            <div class="error"></div>
+                            <input class="phone" type="number" name="ph" id="ph" placeholder="phone number" />
+                            <div class="error2"></div>
                         </article>
-                        <button id="btn-resetAddress" class="btn-reset" type="reset">Clear form</button>
-                        <button id='next_button_address' class="btn-next next_button_form" type="button">NEXT</button>
+                        <article class="checkbox">
+                            <input type="checkbox">
+                            <label for="regularAddress">This is my regular address</label>
+                        </article>
+                        <button class="btn-reset" type="reset">Clear form</button>
+                        <button class="btn-next" type="submit">NEXT</button>
                     </form>
                 </section>
                 <section class="shipping-form hidden">
