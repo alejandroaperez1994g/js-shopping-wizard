@@ -168,8 +168,11 @@ function millisToMinutesAndSeconds(millis) {
 }
 
 function resetAll() {
+  profile_form.classList.add("hidden");
   finish_form.classList.add("hidden");
   product_info.classList.remove("hidden");
+  address_form.classList.add("hidden");
+  shipping_form.classList.add("hidden");
   shoppingData = {};
   current = 1;
   resetAllForms();
@@ -302,7 +305,7 @@ function show_toast() {
   minutesCount += 1;
   if (minutesCount > 5) {
     stopInterval();
-    resetAll();
+    incompleteRegistration();
   } else {
     const close_icon = document.querySelector(".close-icon");
     let textInfo = popupInfo.querySelector("span");
@@ -314,10 +317,31 @@ function show_toast() {
     };
 
     setTimeout(() => {
-      console.log("time out");
       popupInfo.classList.add("hide");
     }, 5000);
   }
+}
+
+function incompleteRegistration() {
+  let textInfo = popupInfo.querySelector("span");
+  const icon = document.querySelector(".uil");
+  const toast = popupInfo.querySelector(".toast");
+  const close_icon = popupInfo.querySelector(".close-icon");
+  const message = popupInfo.querySelector(".details p");
+
+  message.innerHTML = "Sorry for the inconveniences 🈚️";
+  close_icon.style.display = "none";
+  icon.parentElement.style.background = "#ff0000";
+  icon.parentElement.style.width = "125px";
+  icon.classList.remove("uil-exclamation-triangle");
+  icon.classList.add("uil-exclamation-octagon");
+  toast.style.borderLeft = "5px solid #ff0000";
+  textInfo.innerHTML = `You have reached the maximum time to complete the <b>registration</b>. You will be redirected to the product page.`;
+  popupInfo.classList.remove("hide");
+  setTimeout(() => {
+    popupInfo.classList.add("hide");
+    resetAll();
+  }, 5000);
 }
 
 function startInterval() {
