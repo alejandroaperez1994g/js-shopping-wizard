@@ -23,6 +23,13 @@ body{
     background-repeat: no-repeat;
 }
 
+.logo {
+    content: url(./assests/images/logo-mobile.png);
+    width: 10rem;
+    top: -4rem;
+    left: 3.2rem;
+}
+
 main{
     background-color: #fff;
     -webkit-box-shadow: 6px 8px 12px 0px rgba(0,0,0,0.39); 
@@ -255,6 +262,26 @@ main{
     main{
         flex-direction: column;
     }
+
+    .logo-cat {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+    }      
+
+    .width-bar {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-left: -7rem;
+    }
+
+    .logo {
+        content: url(./assests/images/logo.png);
+        height: 6rem;
+        width: 6rem;
+    }
+
     .wrapper{
         flex-direction: row;
     }

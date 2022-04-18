@@ -13,11 +13,14 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <script src="https://kit.fontawesome.com/bace39851e.js" crossorigin="anonymous"></script>
     <script src="./script.js" defer></script>
-    <title>Shopping</title>
+    <link rel="icon" href="./assests/images/favicon.png">
+    <title>Amai · Neko | Geek Drinks Store</title>
 </head>
 
 <body>
-    <header></header>
+    <header>
+    </header>
+
     <div class='popup hide'>
         <div class='toast'>
             <div class='content'>
@@ -31,34 +34,39 @@
         </div>
     </div>
     <main>
-        <div class="progress-bar">
-            <div class="step">
-                <p>Profile</p>
-                <div id="step_1" class="bullet">
-                    <span>1</span>
+        <div class="logo-cat">
+            <a href="index.html"><img class="logo" src="" alt=""></a>
+            <div class="width-bar">
+                <div class="progress-bar">
+                    <div class="step">
+                        <p>Profile</p>
+                        <div id="step_1" class="bullet">
+                            <span>1</span>
+                        </div>
+                        <div class="check fas fa-check"></div>
+                    </div>
+                    <div class="step">
+                        <p>Address</p>
+                        <div id="step_2" class="bullet">
+                            <span>2</span>
+                        </div>
+                        <div class="check fas fa-check"></div>
+                    </div>
+                    <div class="step">
+                        <p>Shipping</p>
+                        <div id="step_3" class="bullet">
+                            <span>3</span>
+                        </div>
+                        <div class="check fas fa-check"></div>
+                    </div>
+                    <div id="step_4" class="step">
+                        <p>Finish</p>
+                        <div class="bullet">
+                            <span>4</span>
+                        </div>
+                        <div class="check fas fa-check"></div>
+                    </div>
                 </div>
-                <div class="check fas fa-check"></div>
-            </div>
-            <div class="step">
-                <p>Address</p>
-                <div id="step_2" class="bullet">
-                    <span>2</span>
-                </div>
-                <div class="check fas fa-check"></div>
-            </div>
-            <div class="step">
-                <p>Shipping</p>
-                <div id="step_3" class="bullet">
-                    <span>3</span>
-                </div>
-                <div class="check fas fa-check"></div>
-            </div>
-            <div id="step_4" class="step">
-                <p>Finish</p>
-                <div class="bullet">
-                    <span>4</span>
-                </div>
-                <div class="check fas fa-check"></div>
             </div>
         </div>
 
@@ -193,15 +201,13 @@
                         </article>
 
                         <article class="shipping-free">
-                            <input type="radio" id="extra" value="2" price="3.99" name="shipment"
-                                shipping="Extra Shipment" />
-                            <label for="extra">Extra shipment (48h) <b> 3,99€</b></label>
+                            <input price="4.99" type="radio" id="extra" value="2" name="shipment" />
+                            <label for="extra">Extra shipment (48h) <b> +4,99€</b></label>
                         </article>
 
                         <article class="shipping-free">
-                            <input type="radio" id="express" value="1" name="shipment" price="7.99"
-                                shipping="Express Shipment" required />
-                            <label for="express">Express shipment (24h) <b>7,99€</b></label>
+                            <input price="9.99" type="radio" id="express" value="1" name="shipment" required />
+                            <label for="express">Express shipment (24h) <b>+9,99€</b></label>
                         </article>
 
                         <p class="shipping-paraf hidden"><b>Your order will arrive:</b></p>
@@ -216,7 +222,7 @@
                         </article>
 
                         <textarea class="gift-message" name="gift-message" id="gift-message" cols="30" rows="10"
-                            placeholder="Gift message here ..."></textarea><br>
+                            placeholder="Gift message here ..." maxlength="200"></textarea><br>
 
                         <article class="select-image">
                             <label for="image">Select Image</label>
@@ -254,7 +260,7 @@
                             <label for="terms">I have read and I accept the terms and conditions</label>
                         </div>
                         <p class="term_condition_error hidden">Please accept terms and conditions.</p>
-                        <button id="buyNow" class="btn-next order_button" disabled>Buy Now</button>
+                        <button id="buyNow" class="btn-next order_button" disabled>FINISH</button>
                     </articule>
                     <articule class="order-price">
                         <p class="order_price_title">Payment details:</p>
