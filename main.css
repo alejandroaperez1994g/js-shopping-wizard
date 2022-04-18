@@ -262,6 +262,8 @@ main{
     align-items: center;
     height: 4rem;
     text-align: center;
+    margin-bottom: -2.7rem;
+    margin-top: -1.5rem;
 }
 
 .increment, .decrement {
@@ -277,7 +279,7 @@ main{
 
 
 .increment:hover, .decrement:hover {
-    color: rgb(58, 58, 58);
+    color: #bdbdbd;
     
 }
 
@@ -286,8 +288,8 @@ main{
 }
 
 .amount {
-    color: black;
-    margin: 0 2rem;
+    color: #555555;
+    margin: 0 3rem;
     font-size: 2.5rem;
     font-weight: 500;
 }
@@ -317,6 +319,7 @@ main{
         content: url(./assests/images/logo.png);
         height: 6rem;
         width: 6rem;
+        margin: 1rem 0 0 1rem;
     }
 
     .wrapper{
@@ -350,6 +353,7 @@ main{
     .products_flavors{
         width: max-content;
         overflow-y: hidden;
+        min-height: 130px;
     }
     .products_flavors img{
         height: 100px;
@@ -400,10 +404,20 @@ main{
     .last_child_profile{
         margin-bottom: 2rem;
     }
+    .counter {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 4rem;
+        text-align: center;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
 }
 .active{
     display: flex;
 }
 .hidden {
     display: none;
+}
+
 }
