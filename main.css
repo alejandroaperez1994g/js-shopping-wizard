@@ -255,6 +255,43 @@ main{
     justify-self: flex-end;
 }
 
+/* product counter */
+.counter {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 4rem;
+    text-align: center;
+}
+
+.increment, .decrement {
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    color: rgb(170, 170, 170);
+    font-size: 4rem;
+    font-weight: 300;
+    background-color: transparent;
+    margin: 0;
+}
+
+
+.increment:hover, .decrement:hover {
+    color: rgb(58, 58, 58);
+    
+}
+
+.decrement {
+    padding-bottom: 0.5rem;
+}
+
+.amount {
+    color: black;
+    margin: 0 2rem;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
 
 
 
