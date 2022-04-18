@@ -38,6 +38,16 @@ const giftCheck = document.getElementById("gift-check");
 const giftText = document.getElementById("gift-message");
 const imageButton = document.querySelector(".select-image");
 
+currentProduct.addEventListener("mousemove", (e) => {
+  const { clientX: x, clientY: y } = e;
+  currentProduct.style.transform = "scale(1.3)";
+  currentProduct.style.transformOrigin = `${x}px ${y}px`;
+});
+
+currentProduct.addEventListener("mouseout", () => {
+  currentProduct.style.transform = "none";
+});
+
 giftCheck.onchange = function () {
   if (this.checked) {
     giftText.style.display = "block";

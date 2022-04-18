@@ -153,6 +153,7 @@ main{
     gap: 0.5rem;
     width: 100%;
     flex: 1;
+    overflow: hidden;
 }
  .main_product_left_products{
     display: flex;
