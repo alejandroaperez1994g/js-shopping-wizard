@@ -38,32 +38,31 @@ const giftCheck = document.getElementById("gift-check");
 const giftText = document.getElementById("gift-message");
 const imageButton = document.querySelector(".select-image");
 
-const increment_btn = document.getElementById('increment');
-const decrement_btn = document.getElementById('decrement');
-const counter_input = document.getElementById('amount');
-const drinkPrice = document.querySelector('.flavorPrice')
+const increment_btn = document.getElementById("increment");
+const decrement_btn = document.getElementById("decrement");
+const counter_input = document.getElementById("amount");
+const drinkPrice = document.querySelector(".flavorPrice");
 
 //counter
-let currentPrice = 8.00;
+let currentPrice = 8.0;
 let data = 1;
 function calculatePrice() {
-  let total = (data*parseFloat(currentPrice)).toFixed(2);
-  drinkPrice.innerHTML= `${total} €`
+  let total = (data * parseFloat(currentPrice)).toFixed(2);
+  drinkPrice.innerHTML = `${total} €`;
 }
 
-increment_btn.addEventListener('click', () => {
+increment_btn.addEventListener("click", () => {
   data += 1;
   counter_input.innerText = data;
   calculatePrice();
 });
 
-decrement_btn.addEventListener('click', () => {
+decrement_btn.addEventListener("click", () => {
   if (data === 1) return;
   data -= 1;
   counter_input.innerText = data;
   calculatePrice();
 });
-
 
 currentProduct.addEventListener("mousemove", (e) => {
   const { clientX: x, clientY: y } = e;
@@ -272,8 +271,8 @@ function saveData(event) {
     Array.from(child.children).forEach((subChild) => {
       switch (subChild.nodeName) {
         case "INPUT":
-          if (!subChild.nextElementSibling) {
-            shoppingData[subChild.name] = subChild.value;
+          if (subChild.name === "ph") {
+            shoppingData["phone"] = subChild.value;
           } else if (subChild.name === "shipment") {
             getDaysOfShippment(subChild);
           } else if (subChild.id === "gift-check") {
