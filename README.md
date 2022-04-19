@@ -11,9 +11,9 @@ This project develops the purchase process form, where each step has its own val
 
 - [Netlify](https://dapper-taffy-e52f5a.netlify.app/)
 
-## Preview Desktop
+## Preview Desktop and Mobile
 
-<img height="385" alt="image" src="https://user-images.githubusercontent.com/43146182/163799019-0b817424-601f-4146-a110-5305cfc978fe.png">    <img height="385" alt="image" src="https://user-images.githubusercontent.com/43146182/163798563-9166380b-e152-4a67-90b4-5713adf9e6e0.png">
+<img height="370" alt="image" src="https://user-images.githubusercontent.com/43146182/163981620-feb3c458-f2b4-459d-be8b-eadefe8ca2d5.png">    <img height="370" alt="image" src="https://user-images.githubusercontent.com/43146182/163981635-525d8b90-821d-4673-8daf-cab4246df71e.png">
 
 
 ## Team 6
@@ -22,4 +22,3 @@ This project develops the purchase process form, where each step has its own val
 - [Sofia](https://github.com/Sofianct)
 - [Oualid](https://github.com/Oualidromli)
 - [Alejandro](https://github.com/alejandroaperez1994g)
-
