@@ -410,7 +410,6 @@ main{
         align-items: center;
         height: 4rem;
         text-align: center;
-        margin-bottom: 1rem;
     }
     
     .increment, .decrement {
