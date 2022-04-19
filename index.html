@@ -98,7 +98,12 @@
                         <p class="price flavorPrice">8.00 €</p>
                         <p class="price_description">200 ml</p>
                     </div>
-                    <button id='buy_button' class="buy_button">BUY</button>
+                    <article class="counter">
+                        <button id='decrement' class="decrement">-</button>
+                        <h2 id="amount" class="amount">1</h2>
+                        <button id='increment' class="increment">+</button>
+                    </article>
+                        <button id='buy_button' class="buy_button">BUY</button>
                 </div>
                 <section class="profile-form hidden">
                     <h2>Profile</h2>
@@ -216,7 +221,7 @@
 
                         <p class="small-cap shipping-paraf hidden">ESTIMATE DELIVERY DATE:</p>
 
-                        <p class="shipping-paraf rangeOfShipping hidden"></b></p>
+                        <p class="shipping-paraf rangeOfShipping hidden"></p>
 
                         <article class="shipping-free gift-check">
                             <input type="checkbox" id="gift-check" />
@@ -238,11 +243,11 @@
                 </section>
 
                 <section class="finish hidden">
-                    <articule class="complete_order hidden">
+                    <article class="complete_order hidden">
                         <p class="complete_order_title">Your order is complete! 🥳</p>
                         <p class="complete_order_info">Thanks you for you order!</p>
-                    </articule>
-                    <articule class="order_information">
+                    </article>
+                    <article class="order_information">
                         <h2>Your Purchase</h2>
                         <div>
                             <img src="" alt="" style="height: 60px" />
@@ -263,15 +268,15 @@
                         </div>
                         <p class="term_condition_error hidden">Please accept terms and conditions.</p>
                         <button id="buyNow" class="btn-next order_button" disabled>FINISH</button>
-                    </articule>
-                    <articule class="order-price">
+                    </article>
+                    <article class="order-price">
                         <p class="order_price_title">Payment details:</p>
 
                         <p class="order_price_name"><b>Product name:</b> 7.8€</p>
                         <p class="order_price_shipping"><b>Premium Shipping: </b>12.9€</p>
                         <hr>
                         <p class="order_price_total"><b>Total:</b> 20.4€</p>
-                    </articule>
+                    </article>
                     <article class="registration_time">
                         <p> Your registration took: <b>3 minutes and 23 seconds</b> </p>
                     </article>

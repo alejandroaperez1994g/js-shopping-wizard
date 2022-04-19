@@ -38,6 +38,33 @@ const giftCheck = document.getElementById("gift-check");
 const giftText = document.getElementById("gift-message");
 const imageButton = document.querySelector(".select-image");
 
+const increment_btn = document.getElementById('increment');
+const decrement_btn = document.getElementById('decrement');
+const counter_input = document.getElementById('amount');
+const drinkPrice = document.querySelector('.flavorPrice')
+
+//counter
+let currentPrice = 8.00;
+let data = 1;
+function calculatePrice() {
+  let total = (data*parseFloat(currentPrice)).toFixed(2);
+  drinkPrice.innerHTML= `${total} €`
+}
+
+increment_btn.addEventListener('click', () => {
+  data += 1;
+  counter_input.innerText = data;
+  calculatePrice();
+});
+
+decrement_btn.addEventListener('click', () => {
+  if (data === 1) return;
+  data -= 1;
+  counter_input.innerText = data;
+  calculatePrice();
+});
+
+
 currentProduct.addEventListener("mousemove", (e) => {
   const { clientX: x, clientY: y } = e;
   currentProduct.style.transform = "scale(1.3)";
@@ -118,6 +145,8 @@ Array.from(imgFlavors).forEach((flavor) => {
     imgMain.style.backgroundImage = `url(${srcFlavor})`;
     nameFlavor.innerHTML = event.target.name;
     priceFlavor.innerHTML = event.target.getAttribute("price");
+    currentPrice = event.target.getAttribute("price");
+    calculatePrice();
   });
 });
 
